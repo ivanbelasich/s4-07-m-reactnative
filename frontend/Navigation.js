@@ -6,7 +6,7 @@ import Faq from "./src/screens/Faq.js";
 import Profile from "./src/screens/Profile.js";
 import Notifications from "./src/screens/Notifications.js";
 import Chat from "./src/screens/Chat.js";
-import { Image } from "react-native";
+import { Image, View } from "react-native";
 
 // screens
 
@@ -17,6 +17,9 @@ const screenOptions = {
     backgroundColor: "#724BB6",
     height: 80,
   },
+  tabBarLabel: () => {
+    return null;
+  },
 };
 
 function MyTabs() {
@@ -24,7 +27,7 @@ function MyTabs() {
     <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}>
       <Tab.Screen
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: () => (
             <Image source={require("./assets/profile-icon.png")} />
           ),
         }}
@@ -33,7 +36,7 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: () => (
             <Image source={require("./assets/faqs-icon.png")} />
           ),
         }}
@@ -42,7 +45,7 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: () => (
             <Image source={require("./assets/home-icon.png")} />
           ),
         }}
@@ -51,7 +54,7 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: () => (
             <Image source={require("./assets/notification-icon.png")} />
           ),
         }}
@@ -60,7 +63,7 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: () => (
             <Image source={require("./assets/messages-icon.png")} />
           ),
         }}
