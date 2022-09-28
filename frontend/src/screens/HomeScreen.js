@@ -1,7 +1,6 @@
 import React from "react";
-<<<<<<< HEAD
 import { ScrollView, Text } from "react-native";
-import JobCard from "../../components/JobCard";
+import JobCard from "../components/JobCard";
 
 const HomeScreen = () => {
   return (
@@ -11,20 +10,9 @@ const HomeScreen = () => {
       <JobCard/>
      
       <JobCard/>
-      <JobCard/>
-      <JobCard/>
-    </ScrollView>
-=======
-import { View, Text } from "react-native";
-import Details from '../components/details';
 
-const HomeScreen = () => {
-  return (
-    <View>
-      <Details />
-    </View>
->>>>>>> develop
-  );
-};
+    </ScrollView>
+  )
+}
 
 export default HomeScreen;
