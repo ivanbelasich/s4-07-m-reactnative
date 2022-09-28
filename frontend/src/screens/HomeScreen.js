@@ -1,11 +1,18 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { ScrollView, Text } from "react-native";
+import JobCard from "../../components/JobCard";
 
 const HomeScreen = () => {
   return (
-    <View>
+    <ScrollView >
+
       <Text className="">HomeScreen</Text>
-    </View>
+      <JobCard/>
+     
+      <JobCard/>
+      <JobCard/>
+      <JobCard/>
+    </ScrollView>
   );
 };
 

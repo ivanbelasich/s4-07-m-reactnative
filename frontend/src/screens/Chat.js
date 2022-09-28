@@ -3,8 +3,8 @@ import React from 'react'
 
 const Chat = () => {
   return (
-    <View>
-      <Text>Chat</Text>
+    <View className="bg-indigo-700">
+      <Text >Chat</Text>
     </View>
   )
 }
