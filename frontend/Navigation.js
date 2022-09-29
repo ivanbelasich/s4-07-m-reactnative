@@ -20,6 +20,7 @@ const screenOptions = {
   tabBarLabel: () => {
     return null;
   },
+  headerShown: false
 };
 
 function MyTabs() {
