@@ -14,7 +14,7 @@ const ProfileCard = () => {
         <Text className="text-base pb-2">Ivan Belasich</Text>
         <Text className="text-base pb-2">Edad: 24 años</Text>
         <Text className="text-base h-7">
-          <Image source={LocationIcon} className="" />
+          <Image source={LocationIcon} />
           <Text> est. Sed</Text>
         </Text>
       </View>
