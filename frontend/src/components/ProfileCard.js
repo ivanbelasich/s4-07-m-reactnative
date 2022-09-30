@@ -6,7 +6,7 @@ import React from "react";
 
 const ProfileCard = () => {
   return (
-    <View className="h-40 flex-row items-center justify-between p-10">
+    <View className="h-40 flex-row items-center justify-between">
       <View className="p-2">
         <Image source={ProfilePic} />
       </View>
