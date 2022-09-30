@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
     <Header />
-    <Notification />
+    {/* <Notification /> */}
     <Navigation />
     </>
     
