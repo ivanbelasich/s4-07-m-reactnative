@@ -11,13 +11,13 @@ export default function Notification() {
     
     <View className="flex-row  items-center" >
         <View className="relative">
-            <Image source={require("../assets/Notifications/campana.png")} className="h-10 w-10 object-contain"/>
+            <Image source={require("../assets/Notifications/campana.png")} className="h-10 w-8"/>
             <View className="bg-[#570E7E] h-[25px] w-[25px] rounded-full absolute -right-4 -top-4 flex items-center justify-center">
-                <Text className='font-bold'>1</Text>
+                <Text className='font-bold text-white'>1</Text>
             </View>
             
         </View>
-        <View className="ml-4">
+        <View className="ml-5">
             <Text className='text-lg text-dark-purple font-extrabold'>¡Tu postulación fue aceptada!</Text>
             <Text className='text-base'>Tu postulación para xxxxx fue aceptada</Text> 
         </View> 

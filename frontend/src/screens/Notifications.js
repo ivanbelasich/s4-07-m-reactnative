@@ -7,7 +7,7 @@ const Notifications = () => {
     <View>
       <View className="h-[98px] relative flex-row justify-end items-center ">
         <TouchableOpacity className="mr-3 p-3 border border-solid border-dark-purple rounded">
-          <Text>BORRAR TODAS</Text>  
+          <Text className="text-dark-purple font-extrabold">BORRAR TODAS</Text>  
         </TouchableOpacity> 
       </View>
       <Notification />
