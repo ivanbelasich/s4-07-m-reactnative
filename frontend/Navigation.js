@@ -37,9 +37,9 @@ function MyTabs() {
       <Tab.Screen
         options={{
           title: '¿CÓMO PODEMOS AYUDARTE?',
-          headerStyle: { height:84, width:259, },
+          headerStyle: { height:84},
           headerTitle:{ fontSize: 24, },
-          headerTitleStyle: {  fontWeight:'700', paddingLeft:90},
+          headerTitleStyle: {  fontWeight:'700', paddingLeft:60},
           tabBarIcon: () => (
             <Image source={require("./assets/faqs-icon.png")} />
           ),

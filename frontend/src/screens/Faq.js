@@ -9,6 +9,7 @@ const Faq = () => {
       <FaqCard />
       <FaqCard />
       <FaqCard />
+      <FaqCard />
     </ScrollView>
   )
 }

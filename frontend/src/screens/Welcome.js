@@ -15,7 +15,7 @@ function Welcome() {
         style={styles.imageBack}
         >
             <Image source={logo} style={styles.imagelogo}  />
-            <ActivityIndicator style={{top:333}} size={69} color='#724BB6'/>
+            <ActivityIndicator style={{top:200}} size={69} color='#724BB6'/>
         </ImageBackground>
 
        </View> 
@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
       
     },
     imagelogo:{
-        width: 422,
-        height: 120,
-      marginTop:-330,
+        width: 300,
+        height: 100,
+        marginTop:-200,
        
     },
     imageBack:{
         width: width,
-        height: height +   StatusBar.currentHeight,
+        height: height+StatusBar.currentHeight,
         justifyContent: 'center',
         alignItems: 'center'
     },
