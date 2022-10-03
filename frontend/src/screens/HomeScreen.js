@@ -5,12 +5,9 @@ import JobCard from "../components/JobCard";
 const HomeScreen = () => {
   return (
     <ScrollView >
-
       <Text className="">HomeScreen</Text>
       <JobCard/>
-     
       <JobCard/>
-
     </ScrollView>
   )
 }
