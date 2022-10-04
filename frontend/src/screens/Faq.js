@@ -1,12 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import FaqCard from '../components/FaqCard'
+
 
 const Faq = () => {
   return (
-    <View>
-      <Text>Faq</Text>
-    </View>
+    <ScrollView >
+      <FaqCard />
+      <FaqCard />
+      <FaqCard />
+      <FaqCard />
+    </ScrollView>
   )
 }
 
-export default Faq
+export default Faq;

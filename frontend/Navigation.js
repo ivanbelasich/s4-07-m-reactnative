@@ -37,11 +37,15 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
+          title: '¿CÓMO PODEMOS AYUDARTE?',
+          headerStyle: { height:84},
+          headerTitle:{ fontSize: 24, },
+          headerTitleStyle: {  fontWeight:'700', paddingLeft:60},
           tabBarIcon: () => (
             <Image source={require("./src/assets/Navigation/faqs-icon.png")} />
           ),
         }}
-        name="Faq"
+        name="FAQ'S"
         component={Faq}
       />
       <Tab.Screen

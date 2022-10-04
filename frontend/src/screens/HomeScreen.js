@@ -5,13 +5,10 @@ import Search from "../components/Search";
 
 const HomeScreen = () => {
   return (
-    <ScrollView  >
+    <ScrollView >
       <Search/>
-
       <JobCard/>
-     
       <JobCard/>
-
     </ScrollView>
   )
 }

@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "frontend",
+    "name": "TA$KS",
     "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/App.json/icon.png",
+    "icon": "./src/assets/Launcher_Icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/App.json/splash.png",
-      "resizeMode": "contain",
+      "image": "./src/assets/Background.png",  
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
