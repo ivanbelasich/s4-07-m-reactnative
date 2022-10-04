@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, View, Image } from "react-native";
 
 function JobCard() {
   return (
-    <View className="bg-[#D9C6E3] mt-4 mx-4 rounded-xl">
+    <View className="bg-[#D9C6E3] my-2 mx-4 rounded-xl">
       <TouchableOpacity className="p-4">
         <View className="flex-row justify-between">
           <Text className="text-2xl flew-row justify-center font-medium">
