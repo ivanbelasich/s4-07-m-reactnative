@@ -54,7 +54,6 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
-          headerShown: false,
           tabBarIcon: () => (
             <Image source={require("./src/assets/Navigation/home-icon.png")} />
           ),
