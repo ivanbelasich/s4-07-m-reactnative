@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-
+import ChatContainer from '../components/Chat/ChatContainer'
 
 const Chat = () => {
   return (
     <View>
-      <Text >Chat</Text>
+      <ChatContainer/>
     </View>
   )
 }
