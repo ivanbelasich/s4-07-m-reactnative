@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, ViewBase } from "react-native";
+import ProfileCard from "../components/Profile/ProfileCard";
+import React from "react";
+import Wallet from "../components/Profile/Wallet";
 
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
+    <View >
+      <ProfileCard />
+      <Wallet />
     </View>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

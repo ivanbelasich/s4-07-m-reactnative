@@ -20,6 +20,7 @@ const screenOptions = {
   tabBarLabel: () => {
     return null;
   },
+  headerShown: false
 };
 
 function MyTabs() {
@@ -28,7 +29,7 @@ function MyTabs() {
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/profile-icon.png")} />
+            <Image source={require("./src/assets/Navigation/profile-icon.png")} />
           ),
         }}
         name="Profile"
@@ -41,7 +42,7 @@ function MyTabs() {
           headerTitle:{ fontSize: 24, },
           headerTitleStyle: {  fontWeight:'700', paddingLeft:60},
           tabBarIcon: () => (
-            <Image source={require("./assets/faqs-icon.png")} />
+            <Image source={require("./src/assets/Navigation/faqs-icon.png")} />
           ),
         }}
         name="FAQ'S"
@@ -49,8 +50,9 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
+          headerShown: false,
           tabBarIcon: () => (
-            <Image source={require("./assets/home-icon.png")} />
+            <Image source={require("./src/assets/Navigation/home-icon.png")} />
           ),
         }}
         name="Home"
@@ -59,7 +61,7 @@ function MyTabs() {
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/notification-icon.png")} />
+            <Image source={require("./src/assets/Navigation/notification-icon.png")} />
           ),
         }}
         name="Notifications"
@@ -68,7 +70,7 @@ function MyTabs() {
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/messages-icon.png")} />
+            <Image source={require("./src/assets/Navigation/messages-icon.png")} />
           ),
         }}
         name="Chat"
