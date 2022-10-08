@@ -27,7 +27,7 @@ export class JobcardsService {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(id: number, updateJobcardDto: UpdateJobcardDto) {
-    return `This action updates a #${id} jobcard`;
+    return `This action updates a #${id} jobscard`;
   }
 
   remove(id: number) {
