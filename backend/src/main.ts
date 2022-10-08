@@ -16,7 +16,7 @@ async function bootstrap() {
     .addTag('jobcards')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('documentation', app, document);
 
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT || 3000);
