@@ -48,7 +48,7 @@ export class AuthService {
 
   async register(userObject: RegisterAuthDto) {
     const { password } = userObject;
-    const plainToHash = await hash(password, 19);
+    const plainToHash = await hash(password, 8);
     userObject = { ...userObject, password: plainToHash };
     return this.userModel.create(userObject);
   }
