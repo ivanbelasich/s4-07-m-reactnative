@@ -10,7 +10,7 @@ import { JobcardsModule } from './jobcards/jobcards.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGODB_ATLAS),
+    MongooseModule.forRoot(process.env.MONGODB_ATLAS_URI),
     AuthModule,
     UsersModule,
     JobcardsModule,
