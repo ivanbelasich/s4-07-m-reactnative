@@ -36,7 +36,7 @@ export class AuthController {
   })
   @ApiResponse({
     status: 404,
-    description: 'User not found',
+    description: 'User already exists',
     schema: {
       type: 'object',
       properties: {
