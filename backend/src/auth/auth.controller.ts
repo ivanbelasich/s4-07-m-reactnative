@@ -1,5 +1,11 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import {
+  ApiCreatedResponse,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+import { User } from 'src/users/schema/user.schema';
 import { AuthService } from './auth.service';
 import { LoginAuthDto } from './dto/login-auth.dto';
 import { RegisterAuthDto } from './dto/register-auth.dto';
@@ -10,6 +16,28 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
+  @ApiOperation({ summary: 'Register new user' })
+  @ApiCreatedResponse({
+    description: 'Created user object as response',
+    type: User,
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'User not found',
+    schema: {
+      type: 'object',
+      properties: {
+        statusCode: {
+          type: 'number',
+          example: 404,
+        },
+        message: {
+          type: 'string',
+          example: 'USER_ALREADY_EXISTS',
+        },
+      },
+    },
+  })
   registerUser(@Body() userObject: RegisterAuthDto) {
     return this.authService.register(userObject);
   }
