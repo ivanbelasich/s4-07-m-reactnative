@@ -19,7 +19,20 @@ export class AuthController {
   @ApiOperation({ summary: 'Register new user' })
   @ApiCreatedResponse({
     description: 'Created user object as response',
-    type: User,
+    schema: {
+      type: 'object',
+      properties: {
+        token: {
+          type: 'string',
+          example:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDNhNjU0OTY4OTlhYWQwMmU5ZDk3MyIsIm5vbWJyZUNvbXBsZXRvIjoiRXplcXVpZWwgQXN0cmFkYSIsImVtYWlsIjoiZXplcXVpZWwuYXN0cmFkYUBnbWFpbC5jb20iLCJpYXQiOjE2NjUzODIxMzEsImV4cCI6MTY2NTM4OTMzMX0.zVgBIIaWYJic2lDo4GV56j7WdxrC14_TYxXbs-l2sWI',
+        },
+        user: {
+          type: 'object',
+          example: User,
+        },
+      },
+    },
   })
   @ApiResponse({
     status: 404,
