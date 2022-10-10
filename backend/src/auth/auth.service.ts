@@ -34,7 +34,7 @@ export class AuthService {
 
     const payload = {
       id: findUser._id,
-      name: findUser.name,
+      nombreCompleto: findUser.nombreCompleto,
       email: findUser.email,
     };
     const token = this.jwtService.sign(payload);
@@ -47,9 +47,30 @@ export class AuthService {
   }
 
   async register(userObject: RegisterAuthDto) {
-    const { password } = userObject;
-    const plainToHash = await hash(password, 19);
+    const { email, password } = userObject;
+
+    const findUser = await this.userModel.findOne({ email });
+    if (findUser) throw new HttpException('USER_ALREADY_EXISTS', 404);
+
+    const plainToHash = await hash(password, 8);
+
     userObject = { ...userObject, password: plainToHash };
-    return this.userModel.create(userObject);
+
+    const newUser = await this.userModel.create(userObject);
+
+    const payload = {
+      id: newUser._id,
+      nombreCompleto: newUser.nombreCompleto,
+      email: newUser.email,
+    };
+
+    const token = this.jwtService.sign(payload);
+
+    const data = {
+      token,
+      user: newUser,
+    };
+
+    return data;
   }
 }
