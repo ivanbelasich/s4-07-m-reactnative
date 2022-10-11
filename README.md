@@ -10,7 +10,7 @@
 
 <a name="descripcion"></a>
 ## 1. Descripción del proyecto 
-TA$KS es una aplicación mobile para la gestión y administración de servicios entre proveedores y clientes. El objetivo principal del producto es servir de puente entre los usuarios clientes y los usuarios proveedores, donde el proveedor puede crear un servicio/trabajo a cumplir, y el cliente tiene la opción de seleccionar uno de estos y entablar una conversación con el proveedor del servicio para el cumplimiento del mismo.
+TA$KS es una aplicación mobile que permite la publicación de servicios o trabajos a cumplirse. El objetivo principal del producto es servir de puente entre los usuarios clientes y los usuarios proveedores, donde el proveedor puede crear un servicio/trabajo a cumplir, y el cliente tiene la opción de seleccionar uno de estos y entablar una conversación con el proveedor del servicio para el cumplimiento del mismo.
 
 <a name="tecnologias"></a>
 ## 2. Stack y Tecnologías aplicadas
