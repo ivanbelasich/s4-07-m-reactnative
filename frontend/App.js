@@ -21,7 +21,7 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
-        <Header />
+        {/* <Header /> */}
         <Navigation />
       </Provider>
     </>
