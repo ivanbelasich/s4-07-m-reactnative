@@ -7,10 +7,13 @@ import Profile from "./src/screens/Profile.js";
 import Notifications from "./src/screens/Notifications.js";
 import Chat from "./src/screens/Chat.js";
 import { Image } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Login from "./src/screens/Login.jsx";
 
 // screens
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const screenOptions = {
     tabBarStyle: {
@@ -124,7 +127,15 @@ function MyTabs() {
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <MyTabs />
+            <Stack.Navigator
+             screenOptions={{
+                headerShown: false
+              }}
+              initialRouteName="Login">
+                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="isLogged" component={MyTabs} />
+
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }
