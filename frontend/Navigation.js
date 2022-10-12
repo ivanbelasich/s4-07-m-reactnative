@@ -13,84 +13,118 @@ import { Image } from "react-native";
 const Tab = createBottomTabNavigator();
 
 const screenOptions = {
-  tabBarStyle: {
-    backgroundColor: "#724BB6",
-    height: 80,
-  },
-  tabBarLabel: () => {
-    return null;
-  },
-  headerShown: false,
+    tabBarStyle: {
+        backgroundColor: "#724BB6",
+        height: 80,
+    },
+    tabBarLabel: () => {
+        return null;
+    },
+    headerShown: false,
 };
 
 function MyTabs() {
-  return (
-    <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}>
-      <Tab.Screen
-        options={{
-          tabBarIcon: () => (
-            <Image
-              source={require("./src/assets/Navigation/profile-icon.png")}
+    return (
+        <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}>
+            <Tab.Screen
+                options={{
+                    title: "TU PERFIL",
+                    headerShown: true,
+                    headerStyle: { height: 130, backgroundColor: "#724BB6" },
+                    headerTitle: { fontSize: 60 },
+                    headerTitleStyle: {
+                        fontWeight: "600",
+                        fontSize: 26,
+                        color: "#fff",
+                    },
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Image
+                            source={require("./src/assets/Navigation/profile-icon.png")}
+                        />
+                    ),
+                }}
+                name="Profile"
+                component={Profile}
             />
-          ),
-        }}
-        name="Profile"
-        component={Profile}
-      />
-      <Tab.Screen
-        options={{
-          title: "¿CÓMO PODEMOS AYUDARTE?",
-          headerShown: true,
-          headerStyle: { height: 84 },
-          headerTitle: { fontSize: 24 },
-          headerTitleStyle: { fontWeight: "700" },
-          headerTitleAlign: "center",
-          tabBarIcon: () => (
-            <Image source={require("./src/assets/Navigation/faqs-icon.png")} />
-          ),
-        }}
-        name="FAQ'S"
-        component={Faq}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: () => (
-            <Image source={require("./src/assets/Navigation/home-icon.png")} />
-          ),
-        }}
-        name="Home"
-        component={HomeScreen}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: () => (
-            <Image
-              source={require("./src/assets/Navigation/notification-icon.png")}
+            <Tab.Screen
+                options={{
+                    title: "¿CÓMO PODEMOS AYUDARTE?",
+                    headerShown: true,
+                    headerStyle: { height: 84 },
+                    headerTitle: { fontSize: 24 },
+                    headerTitleStyle: { fontWeight: "700" },
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Image
+                            source={require("./src/assets/Navigation/faqs-icon.png")}
+                        />
+                    ),
+                }}
+                name="FAQ'S"
+                component={Faq}
             />
-          ),
-        }}
-        name="Notifications"
-        component={Notifications}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: () => (
-            <Image
-              source={require("./src/assets/Navigation/messages-icon.png")}
+            <Tab.Screen
+                options={{
+                    tabBarIcon: () => (
+                        <Image
+                            source={require("./src/assets/Navigation/home-icon.png")}
+                        />
+                    ),
+                }}
+                name="Home"
+                component={HomeScreen}
             />
-          ),
-        }}
-        name="Chat"
-        component={Chat}
-      />
-    </Tab.Navigator>
-  );
+            <Tab.Screen
+                options={{
+                    title: "NOTIFICACIONES",
+                    headerShown: true,
+                    headerStyle: { height: 130, backgroundColor: "#724BB6" },
+                    headerTitle: { fontSize: 60 },
+                    headerTitleStyle: {
+                        fontWeight: "600",
+                        fontSize: 26,
+                        color: "#fff",
+                    },
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Image
+                            source={require("./src/assets/Navigation/notification-icon.png")}
+                        />
+                    ),
+                }}
+                name="Notifications"
+                component={Notifications}
+            />
+            <Tab.Screen
+                options={{
+                    title: "MENSAJES",
+                    headerShown: true,
+                    headerStyle: { height: 130, backgroundColor: "#724BB6" },
+                    headerTitle: { fontSize: 60 },
+                    headerTitleStyle: {
+                        fontWeight: "600",
+                        fontSize: 26,
+                        color: "#fff",
+                    },
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Image
+                            source={require("./src/assets/Navigation/messages-icon.png")}
+                        />
+                    ),
+                }}
+                name="Chat"
+                component={Chat}
+            />
+        </Tab.Navigator>
+    );
 }
 
 export default function Navigation() {
-  return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <MyTabs />
+        </NavigationContainer>
+    );
 }
