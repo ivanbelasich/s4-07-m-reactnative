@@ -8,7 +8,6 @@ const HomeScreen = () => {
     <ScrollView >
       <Search/>
       <JobCard/>
-      <JobCard/>
     </ScrollView>
   )
 }

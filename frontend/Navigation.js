@@ -6,7 +6,10 @@ import Faq from "./src/screens/Faq.js";
 import Profile from "./src/screens/Profile.js";
 import Notifications from "./src/screens/Notifications.js";
 import Chat from "./src/screens/Chat.js";
+// import DetailsScreen from './src/screens/DetailsScreen';
 import { Image } from "react-native";
+
+import { CustomNav } from './src/components/customNavigation';
 
 // screens
 
@@ -59,7 +62,7 @@ function MyTabs() {
           ),
         }}
         name="Home"
-        component={HomeScreen}
+        component={CustomNav}
       />
       <Tab.Screen
         options={{

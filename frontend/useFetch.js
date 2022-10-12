@@ -1,25 +1,41 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const useFetch = (url) => {
+const useGetData = (urls) => {
     const [isLoading, setLoading ] = useState(true);
     const [data, setData] = useState([]);
 
-    const getData = async () => {
-        try {
-            const response = await fetch(url);
-            const json = await response.json();
-            setData(json);
-          } catch (error) {
-            console.error(error);
-          } finally {
-            setLoading(false);
-          }
+    const getData = () => {
+      let payload = {
+        token: "VLn-lViG6erJW51Ur61s7w",
+        data: {
+          title: "productName",
+          description: "stringCharacters|4,6",
+          date: "data|ISOdate",
+          zone: "addressCity",
+          budget: "numberFloat",
+          userAvatar: "personAvatar",
+          userName: "nameFirst",
+          userLastName: "nameLast",
+          deadline: "data|ISOdate",
+          _repeat: 5
+        }
+      };
+
+      axios({
+        method: "post",
+        url: urls,
+        data: payload
+      }).then(function(resp) {
+        console.log(resp)
+      });
+    
     }
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [urls])
     return { isLoading, data};    
 }
 
-export default useFetch;
+export default useGetData;
