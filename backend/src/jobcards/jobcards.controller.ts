@@ -1,8 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Post,
+} from '@nestjs/common';
 import { JobcardsService } from './jobcards.service';
-import { CreateJobcardDto } from './dto/create-jobcard.dto';
 import { UpdateJobcardDto } from './dto/update-jobcard.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { CreateJobcardDto } from './dto/create-jobcard.dto';
 
 @ApiTags('jobcards')
 @Controller('api/jobcards')
