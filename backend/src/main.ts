@@ -14,6 +14,8 @@ async function bootstrap() {
     .addTag('auth')
     .addTag('users')
     .addTag('jobcards')
+    .addTag('comments')
+    .addTag('notifications')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('documentation', app, document);
