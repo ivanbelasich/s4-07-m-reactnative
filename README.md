@@ -26,14 +26,14 @@ TA$KS es una aplicación mobile que permite la publicación de servicios o traba
 Miembros del Cohorte 7, Grupo 4, Fullstack, React Native de No Country.
 |Integrante                 |Rol        |Github|LinkedIn|
 |---------------------------|-----------|-----------------------------------------------|---|
-|Ivan Belasich                |Frontend   |[ivanbelasich](https://github.com/ivanbelasich)|[Link](https://www.linkedin.com/in/ivanbelasich/)|
-|Juan Molina                  |Frontend   |[juanMolina14](https://github.com/juanMolina14)|[Link](https://www.linkedin.com/in/juan-molina-0000/)|
-|Raphael Richardson           |Frontend   ||
-|Julian Erreguerena           |Frontend   ||
-|Oriana De Caro               |Frontend    |[orianadecaro](https://github.com/orianadecaro  )|[Link](https://www.linkedin.com/in/oriana-de-caro/)|
-|Ezequiel Astrada             |Backend    ||
-|Joaquin Accorsi              |Diseño UX/UI||[behance](https://www.behance.net/joaquinaccorsi)|[Link](https://www.linkedin.com/joaquinaccorsi)|
-|Diego Ignacio Silva Cordoba  |Team Leader|||
+|Ivan Belasich                |Frontend     |[ivanbelasich](https://github.com/ivanbelasich)|[Link](https://www.linkedin.com/in/ivanbelasich/)|
+|Juan Molina                  |Frontend     |[juanMolina14](https://github.com/juanMolina14)|[Link](https://www.linkedin.com/in/juan-molina-0000/)|
+|Raphael Richardson           |Frontend     ||
+|Julian Erreguerena           |Frontend     ||
+|Oriana De Caro               |Frontend     |[orianadecaro](https://github.com/orianadecaro)|[Link](https://www.linkedin.com/in/oriana-de-caro/)|
+|Ezequiel Astrada             |Backend      ||
+|Joaquin Accorsi              |Diseño UX/UI |[behance](https://www.behance.net/joaquinaccorsi)|[Link](https://www.linkedin.com/joaquinaccorsi)|
+|Diego Ignacio Silva Cordoba  |Team Leader| ||
 
 
 <a name="deploy-es"></a>
