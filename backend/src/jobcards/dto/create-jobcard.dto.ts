@@ -11,4 +11,7 @@ export class CreateJobcardDto {
 
   @IsNotEmpty()
   descripcion: string;
+
+  @IsNotEmpty()
+  userId: string;
 }

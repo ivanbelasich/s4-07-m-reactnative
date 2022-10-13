@@ -14,6 +14,9 @@ export class JobCard {
 
   @Prop()
   description: string;
+
+  @Prop()
+  userId: string;
 }
 
 export const JobCardSchema = SchemaFactory.createForClass(JobCard);
