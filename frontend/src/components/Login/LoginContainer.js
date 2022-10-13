@@ -144,7 +144,14 @@ export default function LoginContainer({ navigation }) {
 
             <View className="flex-row items-center">
                 <Text className="w-[153px]">Eres nuevo en TA$KS?</Text>
-                <TouchableOpacity className="">
+                <TouchableOpacity className="" onPress={()=>{
+                     navigation.navigate("register");
+                     navigation.reset({
+                         index: 0,
+                         routes: [{ name: "register" }],
+                     });
+                }}>
+                    
                     <Text className="underline color-dark-purple">
                         crear cuenta
                     </Text>
