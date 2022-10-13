@@ -30,7 +30,7 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto) {
     example: 'Argentina',
   })
   @IsNotEmpty()
-  pais: string;
+  department: string;
 
   @ApiProperty({
     description: 'Provincia donde vive el usuario',

@@ -10,6 +10,11 @@ async function bootstrap() {
     .addBearerAuth()
     .setTitle('Ta$ks App')
     .setDescription('The Ta$ks App API description')
+    .setContact(
+      'Ta$ks',
+      'https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md',
+      'tasksapp@tasks.com',
+    )
     .setVersion('1.0')
     .addTag('auth')
     .addTag('users')
