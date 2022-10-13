@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { TouchableOpacity, Text, View, Image, FlatList, SafeAreaView, StyleSheet } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+
 
 // Importando useGetData para conexion basedatos, o pedir informacion. 
 // import {useGetData} from '../../useFetch';
@@ -20,17 +20,17 @@ const DATA = [
     deadline: '5-12-2022'
   },
   {
-      id: '2',
-      title: 'Diseñador',
-      budget: 2000,
-      date: '20-10-2022',
-      zone: 'Buenos Aires',
-      description: 'The act of paying is perhaps the most uncomfortableinfliction that the two orchard thieves entailed upon us. What does that indignity amount to, weighed,I mean, in the scales of the New Testament? I abandon the glory and distinctionof such offices to those who like them. And,doubtless, my going on this whaling voyage, formed part of the grandprogramme of Providence that was drawn up a long time ago. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream.',
-      categorias: 'categoria 2',
-      userAvatar: "https://www.themoviedb.org/t/p/original/tWHyifIcUEc1E0ufIZq5JqyeF6R.jpg",
-      userName: "Michael",
-      userLastName: "Jackson",
-      deadline: '6-1-2023'
+    id: '2',
+    title: 'Diseñador',
+    budget: 2000,
+    date: '20-10-2022',
+    zone: 'Buenos Aires',
+    description: 'The act of paying is perhaps the most uncomfortableinfliction that the two orchard thieves entailed upon us. What does that indignity amount to, weighed,I mean, in the scales of the New Testament? I abandon the glory and distinctionof such offices to those who like them. And,doubtless, my going on this whaling voyage, formed part of the grandprogramme of Providence that was drawn up a long time ago. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream.',
+    categorias: 'categoria 2',
+    userAvatar: "https://www.themoviedb.org/t/p/original/tWHyifIcUEc1E0ufIZq5JqyeF6R.jpg",
+    userName: "Michael",
+    userLastName: "Jackson",
+    deadline: '6-1-2023'
   },
   {
     id: '3',
