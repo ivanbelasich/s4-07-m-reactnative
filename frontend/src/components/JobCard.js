@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { TouchableOpacity, Text, View, Image, FlatList, SafeAreaView, StyleSheet } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-// import axios from 'axios';
-import axios from 'axios';
-
+// Importando useGetData para conexion basedatos, o pedir informacion. 
+// import {useGetData} from '../../useFetch';
 
 const DATA = [
   {
     id: '1',
-    title: 'Titulo 1',
+    title: 'Jardinero',
     budget: 1000,
     date: '19-10-2022',
     zone: 'Mar de Plata',
@@ -22,7 +21,7 @@ const DATA = [
   },
   {
       id: '2',
-      title: 'Titulo 2',
+      title: 'Diseñador',
       budget: 2000,
       date: '20-10-2022',
       zone: 'Buenos Aires',
@@ -35,7 +34,7 @@ const DATA = [
   },
   {
     id: '3',
-    title: 'Titulo 3',
+    title: 'Cuidado Niños',
     budget: 500,
     date: '26-9-2022',
     zone: 'Cartajena',
@@ -48,7 +47,7 @@ const DATA = [
 },
 {
   id: '4',
-  title: 'Titulo 4',
+  title: 'Programador',
   budget: 5000,
   date: '21-7-2022',
   zone: 'Buenos Aires',
@@ -61,7 +60,7 @@ const DATA = [
 },
 {
   id: '5',
-  title:'Titulo 5',
+  title:'Limpieza',
   budget: 100,
   date: '2-11-2022',
   zone: 'Buenos Aires',
@@ -115,6 +114,9 @@ const Item =({item, onPress}) => (
 )
 
 function JobCard({navigation}) {
+
+  // Para obtener la data de la base de datos 
+  // const {data, loading } = useGetData('Data End Point');
   
   const render = ({item}) => (
       <Item item={item} 

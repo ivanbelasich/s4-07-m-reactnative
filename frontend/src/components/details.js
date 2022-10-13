@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, ScrollView, ActivityIndicator } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, 
+    Image, ScrollView, ActivityIndicator, Alert } from 'react-native';
 import { styled } from 'nativewind';
 import CustomBtn from './buttons';
 
@@ -66,7 +67,7 @@ const UserContractor = ({avatar, userName, userLast, deadline, budget}) => (
     </StyledView>
 )
 
-const Btn = () => (
+const Btn = ({contratador, trabajo}) => (
     <StyledView className="flex flex-row mb-4 justify-around">
         <CustomBtn
             buttonColor="transparent"
@@ -80,7 +81,7 @@ const Btn = () => (
             borderRadius: 6,
             }}
             textStyle={{fontSize: 20}}
-            onPress={() => Alert.alert('Me Clickearon.')}
+            onPress={() => Alert.alert(`Te haz contactado con ${contratador}`)}
         />
         <CustomBtn
             buttonColor="#5D1683"
@@ -94,7 +95,7 @@ const Btn = () => (
             borderRadius: 6,
             }}
             textStyle={{fontSize: 20}}
-            onPress={() => Alert.alert('Me Clickearon.')}
+            onPress={() => Alert.alert(`Haz Aplicado para el trabajo de ${trabajo}.`)}
         />
     </StyledView>
 )
@@ -118,7 +119,7 @@ const Details = ({route}) => {
                 deadline={items.deadline}
                 budget={items.budget}
                 />
-            <Btn />
+            <Btn contratador={items.userName} trabajo={items.title}/>
             {/* <Category category={item.category} /> */}
         </ScrollView> 
     </SafeAreaView>
