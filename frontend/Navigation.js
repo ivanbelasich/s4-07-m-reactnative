@@ -9,6 +9,7 @@ import Chat from "./src/screens/Chat.js";
 import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./src/screens/Login.jsx";
+import Register from "./src/screens/Register.jsx";
 
 // screens
 
@@ -134,6 +135,7 @@ export default function Navigation() {
               initialRouteName="Login">
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="isLogged" component={MyTabs} />
+                <Stack.Screen name="register" component={Register} />
 
             </Stack.Navigator>
         </NavigationContainer>

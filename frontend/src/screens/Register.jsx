@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image, TextInput, TouchableOpacity, Button } from 'react-native'
+import { View, Text, ScrollView, Image, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import React, { useState, useEffect } from 'react';
@@ -11,12 +11,13 @@ import Toast from "react-native-root-toast";
 
 
 
-export default function Register() {
+export default function Register({ navigation }) {
 
     const [date, setDate] = useState(new Date());
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
     const [password2, setPassword2] = React.useState("");
+    const [load, setLoad] = React.useState(false);
 
 
     const showMode = (currentMode) => {
@@ -62,29 +63,31 @@ export default function Register() {
     });
 
     const register = async (data) => {
-        console.log(data)
-      
+        console.log(data);
+        setLoad(true);
+
         try {
             const response = await axios.post(
-                "https://s4-07-m-reactnative.herokuapp.com/api/auth/register",data);
-            
-            let toast = Toast.show("Ingresó correctamente", {
+                "https://s4-07-m-reactnative.herokuapp.com/api/auth/register", data);
+
+            let toast = Toast.show("Registro correcto, por favor inicie sesión", {
                 duration: Toast.durations.LONG,
-                position: Toast.positions.BOTTOM,
+                position: Toast.positions.CENTER,
                 shadow: true,
                 animation: true,
                 hideOnPress: true,
                 delay: 0,
                 backgroundColor: "green",
             });
+            setLoad(false);
 
-            // setTimeout(() => {
-            //     navigation.navigate("Home");
-            //     navigation.reset({
-            //         index: 0,
-            //         routes: [{ name: "Home" }],
-            //     });
-            // }, 1000);
+            setTimeout(() => {
+                navigation.navigate("Login");
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: "Login" }],
+                });
+            }, 2000);
         } catch (error) {
             let toast = Toast.show("Datos incorrectos", {
                 duration: Toast.durations.LONG,
@@ -95,6 +98,7 @@ export default function Register() {
                 delay: 0,
                 backgroundColor: "red",
             });
+            setLoad(false);
             console.log(error);
         }
     };
@@ -368,7 +372,13 @@ export default function Register() {
                             </View>
 
                             <TouchableOpacity className="w-1/2 py-2 border bg-dark-purple rounded-xl mb-10" onPress={handleSubmit}>
-                                <Text className="text-center text-white">Registrarse</Text>
+                                <Text className="text-center text-white">
+                                    {load ? (
+                                        <ActivityIndicator color="pink" size="small" />
+                                    ) : (
+                                        "Registrarse"
+                                    )}{" "}
+                                </Text>
                             </TouchableOpacity>
 
 
@@ -391,7 +401,13 @@ export default function Register() {
 
                 <View className="flex-row items-center">
                     <Text className="w-[153px]">De vuelta por aquí?</Text>
-                    <TouchableOpacity className="">
+                    <TouchableOpacity className="" onPress={() => {
+                        navigation.navigate("Login");
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: "Login" }],
+                        });
+                    }}>
                         <Text className="underline color-dark-purple">Inicia sesión</Text>
                     </TouchableOpacity>
                 </View>

@@ -7,7 +7,7 @@
     "icon": "./src/assets/Launcher_Icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/Background.png",  
+      "image": "./src/assets/Background.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/App.json/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.anonymous.frontend"
     },
     "web": {
       "favicon": "./src/assets/App.json/favicon.png"
