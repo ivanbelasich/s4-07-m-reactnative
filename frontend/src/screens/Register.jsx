@@ -1,26 +1,22 @@
 import { View, Text, ScrollView, Image, TextInput, TouchableOpacity, Button } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import DateTimePicker from '@react-native-community/datetimepicker';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+
 import { Get } from 'react-axios'
 import { Formik } from 'formik';
 import * as yup from 'yup';
-
-// import { View, Text,Form, Label, Item,Input } from 'native-base'
-
-
+import axios from "axios";
+import Toast from "react-native-root-toast";
 
 
 
 export default function Register() {
 
-
-
-
-
     const [date, setDate] = useState(new Date());
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
+    const [password2, setPassword2] = React.useState("");
 
 
     const showMode = (currentMode) => {
@@ -31,17 +27,13 @@ export default function Register() {
         setMode(currentMode);
     };
 
-
     const showDatepicker = () => {
         showMode('date');
     };
 
-
-
-
     const RegisterValidationSchema = yup.object().shape({
 
-        nombresyapellidos: yup
+        nombreCompleto: yup
             .string("Ingresa tus Nombres y Apellidos")
             .required("*Campo requerido"),
 
@@ -49,30 +41,63 @@ export default function Register() {
             .string("Ingresa tu Email")
             .required("*Campo requerido")
             .email("Ingresa un Email válido"),
-        province: yup
+        provincia: yup
             .string("Seleccione una provincia")
             .required("*Campo requerido"),
-        gender: yup
+        genero: yup
             .string("Seleccione un genero")
             .required("*Campo requerido"),
         department: yup
             .string("Seleccione un departamento")
             .required("*Campo requerido"),
-        city: yup
+        ciudad: yup
             .string("Seleccione una localidad")
             .required("*Campo requerido"),
         password: yup
             .string()
             .min(8, ({ min }) => `La contraseña debe tener al menos ${min} caracteres`)
             .required('*Campo requerido'),
-        password2: yup
-            .string()
-            .min(8, ({ min }) => `La contraseña debe tener al menos ${min} caracteres`)
-            .required('*Campo requerido'),
-
 
 
     });
+
+    const register = async (data) => {
+        console.log(data)
+      
+        try {
+            const response = await axios.post(
+                "https://s4-07-m-reactnative.herokuapp.com/api/auth/register",data);
+            
+            let toast = Toast.show("Ingresó correctamente", {
+                duration: Toast.durations.LONG,
+                position: Toast.positions.BOTTOM,
+                shadow: true,
+                animation: true,
+                hideOnPress: true,
+                delay: 0,
+                backgroundColor: "green",
+            });
+
+            setTimeout(() => {
+                navigation.navigate("Home");
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: "Home" }],
+                });
+            }, 1000);
+        } catch (error) {
+            let toast = Toast.show("Datos incorrectos", {
+                duration: Toast.durations.LONG,
+                position: Toast.positions.BOTTOM,
+                shadow: true,
+                animation: true,
+                hideOnPress: true,
+                delay: 0,
+                backgroundColor: "red",
+            });
+            console.log(error);
+        }
+    };
 
     return (
         <ScrollView>
@@ -87,8 +112,9 @@ export default function Register() {
                 <Formik
                     validateOnMount={true}
                     validationSchema={RegisterValidationSchema}
-                    initialValues={{ nombresyapellidos: '', email: '', gender: '', fecha: '', province: '', department: '', city: '', password: '', password2: '' }}
-                    onSubmit={values => console.log(values)}
+                    initialValues={{ nombreCompleto: '', email: '', genero: '', fechaDeNacimiento: '', provincia: '', department: '', ciudad: '', password: '' }}
+                    //onSubmit={values => console.log(values)}
+                    onSubmit={values => register(values)}
                 >
                     {({
                         handleChange,
@@ -98,7 +124,7 @@ export default function Register() {
                         errors,
                         touched,
                         setFieldValue,
-                        
+
                     }) => (
                         <>
 
@@ -107,14 +133,14 @@ export default function Register() {
                                 <TextInput
                                     className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px]"
                                     placeholder="Juan Perez"
-                                    onChangeText={handleChange('nombresyapellidos')}
-                                    onBlur={handleBlur('nombresyapellidos')}
-                                    value={values.nombresyapellidos}
+                                    onChangeText={handleChange('nombreCompleto')}
+                                    onBlur={handleBlur('nombreCompleto')}
+                                    value={values.nombreCompleto}
                                     keyboardType="default"
                                 />
 
-                                {(errors.nombresyapellidos && touched.nombresyapellidos) &&
-                                    <Text className="text-xs text-red-500 ml-4">{errors.nombresyapellidos}</Text>
+                                {(errors.nombreCompleto && touched.nombreCompleto) &&
+                                    <Text className="text-xs text-red-500 ml-4">{errors.nombreCompleto}</Text>
                                 }
 
                             </View>
@@ -141,9 +167,9 @@ export default function Register() {
                                     <View className="px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px]">
                                         <Picker
                                             style={{ position: 'relative', top: -5 }}
-                                            selectedValue={values.gender}
-                                            onBlur={handleBlur('gender')}
-                                            onValueChange={(itemValue, itemIndex) => setFieldValue('gender', itemValue)}>
+                                            selectedValue={values.genero}
+                                            onBlur={handleBlur('genero')}
+                                            onValueChange={(itemValue, itemIndex) => setFieldValue('genero', itemValue)}>
                                             <Picker.Item label="Seleccione" />
                                             <Picker.Item label="Hombre" value="Hombre" />
                                             <Picker.Item label="Mujer" value="Mujer" />
@@ -151,8 +177,8 @@ export default function Register() {
                                         </Picker>
                                     </View>
                                 </View>
-                                {(errors.gender && touched.gender) &&
-                                    <Text className="text-xs text-red-500 ml-4">{errors.gender}</Text>
+                                {(errors.genero && touched.genero) &&
+                                    <Text className="text-xs text-red-500 ml-4">{errors.genero}</Text>
                                 }
                             </View>
 
@@ -166,8 +192,8 @@ export default function Register() {
                                         <Text className="">{date.toDateString()}</Text>
                                         {show && (
                                             <DateTimePicker
-                                            maximumDate={new Date(Date.now())}
-                                            locale="es-ES"
+                                                maximumDate={new Date(Date.now())}
+                                                locale="es-ES"
                                                 value={date}
                                                 mode={mode}
                                                 is24Hour={true}
@@ -175,7 +201,7 @@ export default function Register() {
                                                     const currentDate = selectedDate;
                                                     setShow(false);
                                                     setDate(currentDate);
-                                                    setFieldValue('fecha', selectedDate.toDateString())
+                                                    setFieldValue('fechaDeNacimiento', selectedDate.toISOString())
                                                 }}
                                             />
                                         )}
@@ -202,11 +228,10 @@ export default function Register() {
                                                 return (
                                                     <Picker
                                                         style={{ position: 'relative', top: -5 }}
-                                                        // selectedValue={values.gender}
-                                                        onBlur={handleBlur('province')}
-                                                        onValueChange={(itemValue, itemIndex) => setFieldValue('province', itemValue)}
+                                                        onBlur={handleBlur('provincia')}
+                                                        onValueChange={(itemValue, itemIndex) => setFieldValue('provincia', itemValue)}
 
-                                                        selectedValue={values.province}
+                                                        selectedValue={values.provincia}
                                                     >
                                                         <Picker.Item label="Seleccione" value="seleccione" />
                                                         {response.data.provincias.map(prov =>
@@ -218,8 +243,8 @@ export default function Register() {
                                         }}
                                     </Get>
                                 </View>
-                                {(errors.province && touched.province) &&
-                                    <Text className="text-xs text-red-500 ml-4">{errors.province}</Text>
+                                {(errors.provincia && touched.provincia) &&
+                                    <Text className="text-xs text-red-500 ml-4">{errors.provincia}</Text>
                                 }
                             </View>
 
@@ -227,8 +252,8 @@ export default function Register() {
                             <View className="position-relative mb-2">
                                 <Text className="ml-3 font-bold">Departamento</Text>
                                 <View className="px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px]">
-                                    {values.province && (
-                                        <Get url={`https://apis.datos.gob.ar/georef/api/departamentos?orden=nombre&max=5000&provincia=${values.province}`}>
+                                    {values.provincia && (
+                                        <Get url={`https://apis.datos.gob.ar/georef/api/departamentos?orden=nombre&max=5000&provincia=${values.provincia}`}>
                                             {(error, response, isLoading, makeRequest, axios) => {
                                                 if (error) {
                                                     return (<Text>Something bad happened: {error.message}</Text>)
@@ -283,10 +308,10 @@ export default function Register() {
                                                         <Picker
                                                             style={{ position: 'relative', top: -5 }}
 
-                                                            onBlur={handleBlur('city')}
-                                                            onValueChange={(itemValue, itemIndex) => setFieldValue('city', itemValue)}
+                                                            onBlur={handleBlur('ciudad')}
+                                                            onValueChange={(itemValue, itemIndex) => setFieldValue('ciudad', itemValue)}
 
-                                                            selectedValue={values.city}
+                                                            selectedValue={values.ciudad}
 
                                                         // selectedValue={localidad}
                                                         >
@@ -301,8 +326,8 @@ export default function Register() {
                                         </Get>
                                     )}
                                 </View>
-                                {(errors.city && touched.city) &&
-                                    <Text className="text-xs text-red-500 ml-4">{errors.city}</Text>
+                                {(errors.ciudad && touched.ciudad) &&
+                                    <Text className="text-xs text-red-500 ml-4">{errors.ciudad}</Text>
                                 }
                             </View>
 
@@ -325,20 +350,20 @@ export default function Register() {
 
                             <View className="mb-10">
                                 <Text className="ml-4 font-bold">Repetir contraseña</Text>
-                                {values.password2 !== values.password && values.password2 !== "" && (
+                                {password2 !== values.password && password2 !== "" && (
                                     <Text className="my-0 ml-4 text-[#f00]">Las contraseñas deben coincidir</Text>
                                 )}
                                 <TextInput
                                     secureTextEntry
-                                    onChangeText={handleChange('password2')}
-                                    onBlur={handleBlur('password2')}
-                                    value={values.password2}
+                                    onChangeText={setPassword2}
+                                    // onBlur={handleBlur('password2')}
+                                    // value={password2}
                                     placeholder="Repita Contraseña"
                                     className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px]"
                                 />
-                                {(errors.password2 && touched.password2) &&
+                                {/* {(errors.password2 && touched.password2) &&
                                     <Text className="text-xs text-red-500 ml-4">{errors.password2}</Text>
-                                }
+                                } */}
 
                             </View>
 
