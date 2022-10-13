@@ -78,13 +78,13 @@ export default function Register() {
                 backgroundColor: "green",
             });
 
-            setTimeout(() => {
-                navigation.navigate("Home");
-                navigation.reset({
-                    index: 0,
-                    routes: [{ name: "Home" }],
-                });
-            }, 1000);
+            // setTimeout(() => {
+            //     navigation.navigate("Home");
+            //     navigation.reset({
+            //         index: 0,
+            //         routes: [{ name: "Home" }],
+            //     });
+            // }, 1000);
         } catch (error) {
             let toast = Toast.show("Datos incorrectos", {
                 duration: Toast.durations.LONG,
