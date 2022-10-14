@@ -21,7 +21,6 @@ const HomeScreen = () => {
                 <Search />
             </LinearGradient>
             <JobCard />
-            <JobCard />
         </ScrollView>
     );
 };

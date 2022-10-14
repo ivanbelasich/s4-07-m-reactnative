@@ -1,5 +1,10 @@
 import React from "react";
-import { TouchableOpacity, Text, View, Image, FlatList, SafeAreaView, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, View, Image, FlatList, 
+  SafeAreaView, StyleSheet } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import Header from "./Header";
+import Search from "./Search/Search";
+
 
 
 // Importando useGetData para conexion basedatos, o pedir informacion. 
@@ -116,7 +121,7 @@ const Item =({item, onPress}) => (
 function JobCard({navigation}) {
 
   // Para obtener la data de la base de datos 
-  // const {data, loading } = useGetData('Data End Point');
+  // const {data, loading } = useGetData('https://s4-07-m-reactnative.herokuapp.com/api/jobcards');
   
   const render = ({item}) => (
       <Item item={item} 
@@ -126,6 +131,17 @@ function JobCard({navigation}) {
 
   return (
     <SafeAreaView>
+        <LinearGradient
+          colors={[
+              "rgb(83, 28, 179)",
+              "rgb(148, 75, 187)",
+              "rgb(170, 123, 195)",
+              "rgb(242, 242, 242)",
+          ]}
+        >
+          <Header isTransparent />
+          <Search />
+        </LinearGradient>
         <FlatList 
           data={DATA}
           renderItem={render}

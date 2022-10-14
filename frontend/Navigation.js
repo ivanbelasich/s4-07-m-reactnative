@@ -10,6 +10,7 @@ import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./src/screens/Login.jsx";
 import Register from "./src/screens/Register.jsx";
+import { CustomNav } from './src/components/customNavigation';
 
 // screens
 
@@ -77,7 +78,7 @@ function MyTabs() {
                     ),
                 }}
                 name="Home"
-                component={HomeScreen}
+                component={CustomNav}
             />
             <Tab.Screen
                 options={{
