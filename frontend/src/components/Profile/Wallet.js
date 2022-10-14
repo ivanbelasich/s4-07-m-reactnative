@@ -1,7 +1,8 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import WalletIcon from "../../assets/Wallet/wallet-icon.png";
-import ProfileButton from "./ProfileButton";
+import VioletButton from "./VioletButton";
+import WhiteButton from "./WhiteButton";
 
 const Wallet = () => {
   return (
@@ -15,13 +16,15 @@ const Wallet = () => {
           Balance:{" "}
           <Text className="font-extrabold text-xl text-[#531CB3]">$1000</Text>
         </Text>
-        <Text className="text-base underline color-[#570E7E] ">
-          transactions history
-        </Text>
+        <TouchableOpacity>
+          <Text className="text-xs underline color-[#570E7E] w-[60%] text-center m-auto">
+            HISTORIAL DE TRANSACCIONES
+          </Text>
+        </TouchableOpacity>
       </View>
       <View className="flex-row justify-around">
-        <Text className="border-2 p-2.5 font-extrabold text-xs border-[#5D1683] rounded-xl bg-white color-[#531CB3]">RETIRAR DINERO</Text>
-        <ProfileButton title="INGRESAR DINERO"/>
+        <WhiteButton title="RETIRAR DINERO" />
+        <VioletButton title="INGRESAR DINERO" />
       </View>
     </View>
   );

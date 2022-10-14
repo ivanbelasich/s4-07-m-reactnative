@@ -6,7 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 const Search = () => {
     return (
         //crear gradient para el fondo
-        <View className="flex items-center justify-center flex-col p-4 gap-3 bg-purple-300">
+        <View className="flex items-center justify-center flex-col p-4 gap-3 bg-transparent">
             <Text className="text-3xl font-bold text-white" > TITULO 1 </Text>
             <View className="flex flex-row items-center justify-center">
                 <SearchInput />

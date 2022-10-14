@@ -2,8 +2,8 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Details from './details';
-import JobCard from './JobCard';
+import Details from '../components/details';
+import JobCard from '../components/JobCard';
 
 const Stack = createNativeStackNavigator();
 

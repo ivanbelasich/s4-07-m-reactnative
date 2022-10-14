@@ -4,9 +4,9 @@ import React from "react";
 
 const SearchInput = () => {
     return (
-        <View className="flex flex-row items-center justify-center rounded-2xl bg-light-purple overflow-hidden  ">
+        <View className="flex flex-row items-center justify-center rounded-2xl border-black border-[0.3px] bg-light-purple overflow-hidden">
             <TextInput
-                className="bg-red px-6 py-2 bg-gray-100 w-52 border-black border-2 flex rounded-2xl overflow-hidden "
+                className="bg-red h-[43px] pl-4 bg-gray-100 w-[276px]  flex rounded-l-2xl overflow-hidden "
                 placeholder="Search a task"
             />
 
