@@ -29,16 +29,16 @@ export class JobcardsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.jobcardsService.findOne(+id);
+    return this.jobcardsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateJobcardDto: UpdateJobcardDto) {
-    return this.jobcardsService.update(+id, updateJobcardDto);
+    return this.jobcardsService.update(id, updateJobcardDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.jobcardsService.remove(+id);
+    return this.jobcardsService.remove(id);
   }
 }
