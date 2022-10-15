@@ -23,7 +23,7 @@ export class CreateJobcardDto {
     description: 'Descripcion de jobcard',
     example: 'Cortar el pasto de mi patio 4x5 mts',
   })
-  descripcion: string;
+  description: string;
 
   @IsNotEmpty()
   @ApiProperty({
