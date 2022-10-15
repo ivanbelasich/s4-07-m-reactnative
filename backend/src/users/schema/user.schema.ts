@@ -37,7 +37,7 @@ export class User {
 
   @ApiProperty({
     description: 'Departamento donde vive el usuario',
-    example: 'Comuna 13',
+    example: 'Comuna 3',
   })
   @Prop({ default: 'Sin definir' })
   department: string;
