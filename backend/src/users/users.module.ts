@@ -3,6 +3,7 @@ import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from './schema/user.schema';
+import { JobCard, JobCardSchema } from 'src/jobcards/schema/jobcards.schema';
 
 @Module({
   imports: [
@@ -10,6 +11,10 @@ import { User, UserSchema } from './schema/user.schema';
       {
         name: User.name,
         schema: UserSchema,
+      },
+      {
+        name: JobCard.name,
+        schema: JobCardSchema,
       },
     ]),
   ],
