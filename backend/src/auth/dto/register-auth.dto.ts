@@ -26,8 +26,8 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto) {
   fechaDeNacimiento: Date;
 
   @ApiProperty({
-    description: 'Pais donde vive el usuario',
-    example: 'Argentina',
+    description: 'Departamento donde vive el usuario',
+    example: 'Comuna 3',
   })
   @IsNotEmpty()
   department: string;
