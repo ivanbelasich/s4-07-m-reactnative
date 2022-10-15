@@ -56,6 +56,7 @@ export class AuthController {
   }
 
   @Post('login')
+  @ApiOperation({ summary: 'User login' })
   loginUser(@Body() userObject: LoginAuthDto) {
     return this.authService.login1(userObject);
   }

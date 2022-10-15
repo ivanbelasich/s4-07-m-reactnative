@@ -1,6 +1,4 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { Document } from 'mongoose';
-import { User } from 'src/users/schema/user.schema';
 
 export type JobCardsDocument = JobCard & Document;
 
@@ -14,6 +12,9 @@ export class JobCard {
 
   @Prop()
   description: string;
+
+  @Prop()
+  userId: string;
 }
 
 export const JobCardSchema = SchemaFactory.createForClass(JobCard);

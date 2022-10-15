@@ -36,11 +36,11 @@ export class User {
   fechaDeNacimiento: Date;
 
   @ApiProperty({
-    description: 'Pais donde vive el usuario',
-    example: 'Argentina',
+    description: 'Departamento donde vive el usuario',
+    example: 'Comuna 3',
   })
   @Prop({ default: 'Sin definir' })
-  pais: string;
+  department: string;
 
   @ApiProperty({
     description: 'Provinca donde vive el usuario',
