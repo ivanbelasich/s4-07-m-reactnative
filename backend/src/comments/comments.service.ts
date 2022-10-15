@@ -1,26 +1,51 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
+import { Comment, CommentsDocument } from './schema/comments.schema';
 
 @Injectable()
 export class CommentsService {
-  create(createCommentDto: CreateCommentDto) {
-    return 'This action adds a new comment';
+  constructor(
+    @InjectModel(Comment.name)
+    private readonly commentModel: Model<CommentsDocument>,
+  ) {}
+
+  async create(createCommentDto: CreateCommentDto) {
+    const newComment = await this.commentModel.create(createCommentDto);
+    return newComment;
   }
 
-  findAll() {
-    return `This action returns all comments`;
+  async findAll() {
+    const comments = await this.commentModel.find({});
+    return comments;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} comment`;
+  async findOne(id: string) {
+    const comment = await this.commentModel.findById(id);
+    if (!comment) throw new HttpException('COMMENT_NOT_FOUND', 404);
+
+    return comment;
   }
 
-  update(id: number, updateCommentDto: UpdateCommentDto) {
-    return `This action updates a #${id} comment`;
+  async update(id: string, updateCommentDto: UpdateCommentDto) {
+    const comment = await this.commentModel.findById(id);
+    if (!comment) throw new HttpException('COMMENT_NOT_FOUND', 404);
+    const updatedComment = await this.commentModel.findByIdAndUpdate(
+      id,
+      updateCommentDto,
+      { new: true },
+    );
+    return updatedComment;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} comment`;
+  async remove(id: string) {
+    const comment = await this.commentModel.findById(id);
+    if (!comment) throw new HttpException('COMMENT_NOT_FOUND', 404);
+    const deletedComment = await this.commentModel.findOneAndDelete({
+      _id: id,
+    });
+    return deletedComment;
   }
 }
