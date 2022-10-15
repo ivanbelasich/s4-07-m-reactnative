@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @ApiBearerAuth()
@@ -38,5 +38,11 @@ export class UsersController {
   remove(@Param('id') id: string) {
     console.log(id);
     return this.usersService.remove(id);
+  }
+
+  @Get(':id/jobcards')
+  @ApiOperation({ summary: "get the user's jobcards" })
+  getAllUserJobcards(@Param('id') id: string) {
+    return this.usersService.findJobcards(id);
   }
 }
