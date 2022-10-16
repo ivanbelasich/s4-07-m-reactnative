@@ -10,7 +10,7 @@ export default function VioletButton(props) {
         className="h-10 rounded-xl"
       >
         <View>
-          <Text className="text-[#f1f1f1] text-xs text-center p-3 font-extrabold">
+          <Text className="text-[#f1f1f1] text-xs text-center p-3 font-extrabold w-[135px]">
             {" "}
             {props.title}
           </Text>
