@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { HttpException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { JobCard, JobCardsDocument } from 'src/jobcards/schema/jobcards.schema';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -20,6 +20,8 @@ export class UsersService {
   }
 
   async findOne(id: string) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const user = await this.userModel.findById(id);
     if (!user) throw new HttpException('USER_NOT_FOUND', 404);
 
@@ -27,6 +29,8 @@ export class UsersService {
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const user = await this.userModel.findById(id);
     if (!user) throw new HttpException('USER_NOT_FOUND', 404);
     const updatedUser = await this.userModel.findByIdAndUpdate(
@@ -38,6 +42,8 @@ export class UsersService {
   }
 
   async remove(id: string) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const user = await this.userModel.findById(id);
     if (!user) throw new HttpException('USER_NOT_FOUND', 404);
     const deletedUser = await this.userModel.findOneAndDelete({ _id: id });
@@ -45,6 +51,8 @@ export class UsersService {
   }
 
   async findJobcards(id: string) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const user = await this.userModel.findById(id);
     if (!user) throw new HttpException('USER_NOT_FOUND', 404);
     const jobcards = await this.jobcardModel.find({ userId: id });

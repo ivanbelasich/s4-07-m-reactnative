@@ -1,6 +1,6 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
 import { Comment, CommentsDocument } from './schema/comments.schema';
@@ -23,6 +23,8 @@ export class CommentsService {
   }
 
   async findOne(id: string) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const comment = await this.commentModel.findById(id);
     if (!comment) throw new HttpException('COMMENT_NOT_FOUND', 404);
 
@@ -30,6 +32,8 @@ export class CommentsService {
   }
 
   async update(id: string, updateCommentDto: UpdateCommentDto) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const comment = await this.commentModel.findById(id);
     if (!comment) throw new HttpException('COMMENT_NOT_FOUND', 404);
     const updatedComment = await this.commentModel.findByIdAndUpdate(
@@ -41,6 +45,8 @@ export class CommentsService {
   }
 
   async remove(id: string) {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      throw new HttpException('INVALID_ID', 404);
     const comment = await this.commentModel.findById(id);
     if (!comment) throw new HttpException('COMMENT_NOT_FOUND', 404);
     const deletedComment = await this.commentModel.findOneAndDelete({
