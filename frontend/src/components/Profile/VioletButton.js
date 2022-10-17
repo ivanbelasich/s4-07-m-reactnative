@@ -10,8 +10,10 @@ export default function VioletButton(props) {
         className="h-10 rounded-xl"
       >
         <View>
-          <Text className="text-[#f1f1f1] text-xs text-center py-3  m-auto font-extrabold w-[135px]">
-            {" "}
+          <Text
+            onPress={props.onPress}
+            className="text-[#f1f1f1] text-xs text-center py-3  m-auto font-extrabold w-[135px]"
+          >
             {props.title}
           </Text>
         </View>
