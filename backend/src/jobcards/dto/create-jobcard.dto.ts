@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, Min } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsNumber, Min } from 'class-validator';
 
 export class CreateJobcardDto {
   @IsNotEmpty()
@@ -7,7 +7,14 @@ export class CreateJobcardDto {
     description: 'Nombre de jobcard',
     example: 'Cortar el pasto',
   })
-  name: string;
+  titulo: string;
+
+  @IsNotEmpty()
+  @ApiProperty({
+    description: 'Categoria de jobcard',
+    example: 'Limpieza',
+  })
+  categoria: string;
 
   @IsNotEmpty()
   @IsNumber()
@@ -16,14 +23,22 @@ export class CreateJobcardDto {
     description: 'Precio de jobcard',
     example: 1500,
   })
-  price: number;
+  presupuesto: number;
+
+  @ApiProperty({
+    description: 'Fecha limite de jobcard',
+    example: new Date('12-11-2022'),
+  })
+  @IsNotEmpty()
+  @IsDateString()
+  fechaLimite: Date;
 
   @IsNotEmpty()
   @ApiProperty({
     description: 'Descripcion de jobcard',
     example: 'Cortar el pasto de mi patio 4x5 mts',
   })
-  description: string;
+  descripcion: string;
 
   @IsNotEmpty()
   @ApiProperty({

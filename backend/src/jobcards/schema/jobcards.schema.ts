@@ -5,13 +5,19 @@ export type JobCardsDocument = JobCard & Document;
 @Schema({ timestamps: true })
 export class JobCard {
   @Prop()
-  name: string;
+  titulo: string;
 
   @Prop()
-  price: number;
+  categoria: string;
 
   @Prop()
-  description: string;
+  fechaLimite: Date;
+
+  @Prop()
+  presupuesto: number;
+
+  @Prop()
+  descripcion: string;
 
   @Prop()
   userId: string;
