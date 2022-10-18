@@ -1,7 +1,11 @@
 import React from "react";
-import { View, StyleSheet, Text, StatusBar, Image, Alert, Button } from "react-native";
+import { View, StyleSheet, Text, StatusBar, Image, Alert, Button, ActivityIndicator } from "react-native";
 import { styled } from "nativewind";
 import CustomBtn from "./buttons";
+import { useEffect ,useState} from "react";
+import axios from "axios";
+
+
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
@@ -17,7 +21,7 @@ const Header = ({ title, price }) => (
 const DatePlace = ({ date, place, category }) => (
   <StyledView className="flex flex-row justify-between">
     <StyledText style={styles.text}>
-      <Image source={require("../assets/Vector.png")} /> {date}
+      <Image source={require("../assets/Vector.png")} /> {date.slice(0, 10)}
     </StyledText>
     <StyledText style={styles.text}>
       <Image source={require("../assets/LocationIcon.png")} /> {place}
@@ -111,27 +115,51 @@ const Details = ({ route, navigation }) => {
   console.log(route.params);
   const items = route.params.value;
 
+  const [loading, setLoading] = useState(true);
+
+  const [data, setData] = useState([])
+  
+  useEffect(() => {
+    axios.get(`https://s4-07-m-reactnative.herokuapp.com/api/users/${items.userId}`)
+    .then((response) => {
+      setData(response.data)
+    }
+    )
+    .finally(()=> setLoading(false))
+    .catch((error) => 
+      console.log(error)) 
+
+  },[])
+
+  if (loading) {
+    return(
+      <View className="mt-28">
+        <ActivityIndicator size="large" color="#570E7E" />
+      </View>
+
+    ) 
+  }
   return (
     <View className="mb-4">
       {/* cambiar nombre del archivo fakeData por la API  */}
       <View style={styles.container} className="rounded-md">
       <Button title="Home" onPress={() => navigation.navigate("isLogged")} />
-        <Header title={items.title} price={items.budget} />
+        <Header title={items.titulo} price={items.presupuesto} />
         <DatePlace
-          date={items.date}
-          place={items.zone}
-          category={items.categorias}
+          date={items.createdAt}
+          place={`${data.ciudad}, ${data.provincia}`}
+          category={items.categoria}
         />
         <StyledText className="mt-4">Descripción</StyledText>
-        <Description description={items.description} />
+        <Description description={items.descripcion} />
         <UserContractor
           avatar={items.userAvatar}
-          userName={items.userName}
+          userName={data.nombreCompleto}
           userLast={items.userLastName}
-          deadline={items.deadline}
-          budget={items.budget}
+          deadline={items.fechaLimite?.slice(0, 10)}
+          budget={items.presupuesto}
         />
-        <Btn contratador={items.userName} trabajo={items.title} />
+        <Btn contratador={data.nombreCompleto} trabajo={items.titulo} />
         {/* <Category category={item.category} /> */}
       </View>
     </View>

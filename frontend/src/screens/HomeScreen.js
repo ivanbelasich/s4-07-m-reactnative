@@ -2,9 +2,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Button, ScrollView, Text, View } from "react-native";
 import Header from "../components/Header";
-import JobCard from "../components/JobCard";
 import Search from "../components/Search/Search";
 import AddButton from "../components/AddButton";
+import JobCardContainer from "../components/Job/JobCardContainer";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
         <Header isTransparent />
         <Search />
       </LinearGradient>
-        <JobCard />
+       <JobCardContainer/>
       <AddButton
         texto="+"
         onClick={() => {
