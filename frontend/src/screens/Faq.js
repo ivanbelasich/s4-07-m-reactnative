@@ -1,15 +1,15 @@
 import React from "react";
-import { View } from "react-native";
-import FaqCard from "../components/FaqCard";
+import { ScrollView, View } from "react-native";
+import FaqCard from "../components/FAQS/FaqCard";
+import faqData from "../components/FAQS/FaqData";
 
 const Faq = () => {
   return (
-    <View className="mt-5">
-      <FaqCard />
-      <FaqCard />
-      <FaqCard />
-      <FaqCard />
-    </View>
+    <ScrollView className="my-5">
+      {faqData.map((el, idx) => (
+        <FaqCard title={el.title} data={el.data} key={idx} />
+      ))}
+    </ScrollView>
   );
 };
 
