@@ -158,7 +158,8 @@ export default function NewjobComponent ({ navigation }) {
                 Título
               </Text>
               <TextInput
-                className=" mb-8 bg-[#DFD8E2] rounded-xl w-[90%] h-[39px] pl-3 "
+                className=" mb-10 bg-[#DFD8E2] rounded-xl w-[90%] h-[39px] pl-3 "
+                placeholder="Título de tarea"
                 onChangeText={handleChange('titulo')}
                 onBlur={handleBlur('titulo')}
                 value={values.titulo}
@@ -240,6 +241,7 @@ export default function NewjobComponent ({ navigation }) {
               <TextInput
                 style={{ textAlignVertical: "top" }}
                 multiline
+                placeholder="Descripción de tarea"
                 numberOfLines={6}
                 className="mb-8  bg-[#DFD8E2] rounded-xl w-[90%]  p-3"
                 onChangeText={handleChange('descripcion')}
@@ -265,10 +267,10 @@ export default function NewjobComponent ({ navigation }) {
                     />
                   </TouchableOpacity>
                   <TouchableOpacity>
-                    <Feather name="paperclip" size={25} color="#570E7E" />
+                    <Feather name="paperclip" size={22} color="#570E7E" />
                   </TouchableOpacity>
                   <TouchableOpacity>
-                    <Feather name="link" size={25} color="#570E7E" />
+                    <Feather name="link" size={22} color="#570E7E" />
                   </TouchableOpacity>
                 </View>
               </View>

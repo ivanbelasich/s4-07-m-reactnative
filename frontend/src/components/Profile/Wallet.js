@@ -11,15 +11,14 @@ const Wallet = () => {
         <Image source={WalletIcon}></Image>
         <Text className="text-xl font-bold ml-2">TU BILLETERA</Text>
       </View>
-      <View className="flex-row justify-around my-4">
-        <Text className="text-center ">
+      <View className="flex-row justify-around my-4 mx-3">
+        <Text className="text-center text-[15px] color-[#000000]">
           Balance:{" "}
-          <Text className="font-extrabold text-xl text-[#531CB3]">$1000</Text>
+          <Text className="font-black text-2xl text-[#531CB3]">$1000</Text>
         </Text>
         <TouchableOpacity>
           <Text className="text-xs underline color-[#570E7E] w-[60%] text-center m-auto">
-            HISTORIAL DE TRANSACCIONES
-          </Text>
+            Historial de transacciones </Text>
         </TouchableOpacity>
       </View>
       <View className="flex-row justify-around">
