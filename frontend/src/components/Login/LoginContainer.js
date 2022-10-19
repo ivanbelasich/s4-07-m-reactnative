@@ -117,14 +117,14 @@ export default function LoginContainer({ navigation }) {
       </View>
 
       <TouchableOpacity
-      
+        className="w-1/2 py-2 border bg-dark-purple rounded-xl mb-10"
         onPress={() => login()}
       >
-        <Text className="text-center text-white mb-[36px]">
+        <Text className="text-center text-white">
           {loading ? (
             <ActivityIndicator color="pink" size="small" />
           ) : (
-           < VioletButton title="Ingresar"/>
+            "INGRESAR"
           )}{" "}
         </Text>
       </TouchableOpacity>
