@@ -5,7 +5,10 @@ export type NotificationDocument = Notification & Document;
 @Schema({ timestamps: true })
 export class Notification {
   @Prop()
-  name: string;
+  titulo: string;
+
+  @Prop()
+  descripcion: string;
 
   @Prop()
   userId: string;
