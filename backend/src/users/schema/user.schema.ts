@@ -62,6 +62,12 @@ export class User {
   @Prop({ required: true })
   password: string;
 
+  @Prop({
+    default:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrw6TFJfxQTpixJo4fe2VDEBKrNfyPUhkTdw&usqp=CAU',
+  })
+  photoUrl: string;
+
   @Prop([{ type: mongoose.Types.ObjectId, ref: 'Jobcards' }])
   jobcards: JobCard;
 }

@@ -45,4 +45,11 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto) {
   })
   @IsNotEmpty()
   ciudad: string;
+
+  @ApiProperty({
+    description: 'URL de la foto de perfil del usuario',
+    example:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrw6TFJfxQTpixJo4fe2VDEBKrNfyPUhkTdw&usqp=CAU',
+  })
+  photoUrl: string;
 }
