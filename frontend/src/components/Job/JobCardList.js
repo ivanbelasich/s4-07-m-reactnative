@@ -3,13 +3,13 @@ import React from "react";
 import JobCard from "./JobCard";
 import { useNavigation } from "@react-navigation/native";
 
-const JobCardList = ({ jobs }) => {
+const JobCardList = ({ jobs, userData }) => {
     const navigation = useNavigation();
 
     const render = ({ item }) => (
         <JobCard
             item={item}
-            onPress={() => navigation.navigate("Detalle", { value: item })}
+            onPress={() => navigation.navigate("Detalle", { value: item, data: userData })}
         />
     );
 

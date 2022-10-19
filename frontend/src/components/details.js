@@ -115,30 +115,6 @@ const Details = ({ route, navigation }) => {
   console.log(route.params);
   const items = route.params.value;
 
-  const [loading, setLoading] = useState(true);
-
-  const [data, setData] = useState([])
-  
-  useEffect(() => {
-    axios.get(`https://s4-07-m-reactnative.herokuapp.com/api/users/${items.userId}`)
-    .then((response) => {
-      setData(response.data)
-    }
-    )
-    .finally(()=> setLoading(false))
-    .catch((error) => 
-      console.log(error)) 
-
-  },[])
-
-  if (loading) {
-    return(
-      <View className="mt-28">
-        <ActivityIndicator size="large" color="#570E7E" />
-      </View>
-
-    ) 
-  }
   return (
     <View className="mb-4">
       {/* cambiar nombre del archivo fakeData por la API  */}
@@ -147,19 +123,19 @@ const Details = ({ route, navigation }) => {
         <Header title={items.titulo} price={items.presupuesto} />
         <DatePlace
           date={items.createdAt}
-          place={`${data.ciudad}, ${data.provincia}`}
+          place={`${items.ciudad}, ${items.provincia}`}
           category={items.categoria}
         />
         <StyledText className="mt-4">Descripción</StyledText>
         <Description description={items.descripcion} />
         <UserContractor
           avatar={items.userAvatar}
-          userName={data.nombreCompleto}
+          userName={items.contratador}
           userLast={items.userLastName}
           deadline={items.fechaLimite?.slice(0, 10)}
           budget={items.presupuesto}
         />
-        <Btn contratador={data.nombreCompleto} trabajo={items.titulo} />
+        <Btn contratador={items.contratador} trabajo={items.titulo} />
         {/* <Category category={item.category} /> */}
       </View>
     </View>

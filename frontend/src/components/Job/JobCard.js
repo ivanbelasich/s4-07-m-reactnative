@@ -37,7 +37,7 @@ const JobCard = ({ item, onPress }) => (
       </Text>
       <Text className="text-sm text-[#565555] py-1 ">
         <Image className="" source={require("../../assets/LocationIcon.png")} />{" "}
-        {item?.zone}{" "}
+        {`${item?.ciudad}, ${item?.provincia}`}
       </Text>
     </View>
     <View className="flex-row justify-between py-4">
