@@ -5,6 +5,7 @@ import {
   Image,
   TextInput,
   ActivityIndicator,
+  ScrollView,
 } from "react-native";
 import React, { useEffect } from "react";
 import axios from "axios";
@@ -75,7 +76,7 @@ export default function LoginContainer({ navigation }) {
   };
 
   return (
-    <View className="container mx-auto px-10 py-20 flex-col items-center">
+    <View className="container mx-auto px-10 h-[100%]  flex-col items-center justify-center">
       <Image
         source={require("../../assets/Login/Logo.png")}
         className="w-[222px] h-[82px]"
@@ -91,7 +92,7 @@ export default function LoginContainer({ navigation }) {
           onChangeText={onChangeUser}
           value={user}
           placeholder="Usuario"
-          className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-10"
+          className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-8"
         />
       </View>
       <View>
@@ -102,7 +103,7 @@ export default function LoginContainer({ navigation }) {
           value={password}
           placeholder="Contraseña"
           keyboardType="password"
-          className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-10"
+          className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-8"
         />
       </View>
       <View className="flex-row items-center my-10">
@@ -115,7 +116,7 @@ export default function LoginContainer({ navigation }) {
       </View>
 
       <TouchableOpacity
-        className="w-1/2 py-2 border bg-dark-purple rounded-xl mb-20"
+        className="w-1/2 py-2 border bg-dark-purple rounded-xl mb-10"
         onPress={() => login()}
       >
         <Text className="text-center text-white">
