@@ -1,10 +1,13 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import React, {useState} from "react";
 import WalletIcon from "../../assets/Wallet/wallet-icon.png";
 import VioletButton from "./VioletButton";
 import WhiteButton from "./WhiteButton";
+// import Paypal from './paypalComponent';
+import PaymentBtn from './PaymentStack';
 
 const Wallet = () => {
+
   return (
     <View className="">
       <View className="justify-center flex-row items-center">
@@ -21,6 +24,9 @@ const Wallet = () => {
             Historial de transacciones </Text>
         </TouchableOpacity>
       </View>
+      <View>
+        <PaymentBtn inputTitle={'Ingresa Dinero a la cuenta'} placeHolder={'Cantidad a Ingresar'} tWing={'flex px-3 mt-14 items-center rounded-xl justify-center'} dNone={false}/>
+      </View>      
       <View className="flex-row justify-around">
         <WhiteButton title="RETIRAR DINERO" />
         <VioletButton title="INGRESAR DINERO" />

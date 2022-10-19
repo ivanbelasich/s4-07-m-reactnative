@@ -17,6 +17,7 @@ import WhiteButton from "./Profile/WhiteButton";
 import VioletButton from "./Profile/VioletButton";
 // import DateTimePick from "./DateTimePick";
 import Checkbox from "../assets/checkbox.png";
+import PaymentBtn from './Profile/PaymentStack';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Formik } from 'formik';
@@ -195,7 +196,7 @@ export default function NewjobComponent ({ navigation }) {
           placeholder="dd/mm/yy"
         /> */}
               {/* <DateTimePick
-                date={date} setDate={setDate}
+                    date={date} setDate={setDate}
               //  onChange={onChange} 
               /> */}
               <TouchableOpacity
@@ -235,6 +236,7 @@ export default function NewjobComponent ({ navigation }) {
               {(errors.presupuesto && touched.presupuesto) &&
                 <Text className="text-xs text-red-500 ml-4">{errors.presupuesto}</Text>
               }
+              <PaymentBtn value={values.presupuesto} dNone={true} />
               <Text className="mx-8 my-2 self-start text-[16px] font-medium">
                 Descripción
               </Text>
