@@ -1,14 +1,14 @@
-import { View, ViewBase } from "react-native";
+import { View, ViewBase, ScrollView } from "react-native";
 import ProfileCard from "../components/Profile/ProfileCard";
 import React from "react";
 import Wallet from "../components/Profile/Wallet";
 
 const Profile = () => {
   return (
-    <View >
+    <ScrollView >
       <ProfileCard />
       <Wallet />
-    </View>
+    </ScrollView>
   );
 };
 

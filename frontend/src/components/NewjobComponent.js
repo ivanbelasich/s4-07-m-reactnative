@@ -16,6 +16,7 @@ import WhiteButton from "./Profile/WhiteButton";
 import VioletButton from "./Profile/VioletButton";
 import DateTimePick from "./DateTimePick";
 import Checkbox from "../assets/checkbox.png";
+import PaymentBtn from './Profile/PaymentStack';
 
 const NewjobComponent = ({ navigation }) => {
   const [selectedLanguage, setSelectedLanguage] = useState();
@@ -60,10 +61,15 @@ const NewjobComponent = ({ navigation }) => {
           placeholder="dd/mm/yy"
         /> */}
         <DateTimePick date={date} setDate={setDate} onChange={onChange} />
-        <Text className="mx-8 my-2 self-start text-[16px] font-medium ">
+
+        {/* Cambie esta seccion por boton de ingresar dinero.*/}
+        <PaymentBtn tWing={'mx-8 my-2 self-start text-[16px] font-medium flex w-100'} inputTitle={'Presupuesto'}/>
+        {/* <Text className="mx-8 my-2 self-start text-[16px] font-medium ">
           Presupuesto
         </Text>
-        <TextInput className="mb-8  bg-[#DFD8E2] rounded-xl w-[90%] h-[39px] pl-3 " />
+        <TextInput className="mb-8  bg-[#DFD8E2] rounded-xl w-[90%] h-[39px] pl-3 " /> */}
+
+
         <Text className="mx-8 my-2 self-start text-[16px] font-medium">
           Descripción
         </Text>
