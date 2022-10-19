@@ -26,7 +26,7 @@ const Wallet = () => {
         </TouchableOpacity>
       </View>
       <View>
-        <PaymentBtn inputTitle={'Ingresa Dinero a la cuenta'} placeHolder={'Cantidad a Ingresar'} tWing={'flex px-3 mt-14 items-center rounded-xl justify-center'}/>
+        <PaymentBtn inputTitle={'Ingresa Dinero a la cuenta'} placeHolder={'Cantidad a Ingresar'} tWing={'flex px-3 mt-14 items-center rounded-xl justify-center'} dNone={false}/>
       </View>      
       <View className="flex-row justify-around">
         <WhiteButton title="RETIRAR DINERO" />

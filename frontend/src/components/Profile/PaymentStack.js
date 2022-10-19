@@ -31,13 +31,14 @@ const MakePayment = ({budget, setPayment, name, id}) => {
     
 }
 
-const PaymentBtn = ({name, id, inputTitle, placeHolder, tWing}) => {
+const PaymentBtn = ({name, id, inputTitle, placeHolder, value, dNone}) => {
     const [amountOfBudget, setAmountOfBudget] = useState(0);
     const [payment, setPayment ] = useState(false);
 
 
     return (
         <View className="w-[100%] justify-center">
+            {dNone != true ?
             <View>
                 <Text className="mx-8 my-2 self-start text-[16px] font-medium">{inputTitle}</Text>
                 <TextInput
@@ -47,10 +48,11 @@ const PaymentBtn = ({name, id, inputTitle, placeHolder, tWing}) => {
                     placeholder={placeHolder}
                     className="mb-8 bg-[#DFD8E2] rounded-xl w-[90%] h-[39px] pl-3 mx-auto"
                 />
-            </View>
+            </View> : null
+            }
             {payment != false ? 
             <MakePayment 
-                budget={amountOfBudget} 
+                budget={amountOfBudget || value} 
                 setPayment={setPayment}
                 name={name}
                 id={id}    

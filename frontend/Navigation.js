@@ -111,9 +111,9 @@ export default function Navigation() {
         }}
         initialRouteName="Login"
       >
-        {/*       <Stack.Screen name="Login" component={Login} /> */}
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="isLogged" component={MyTabs} />
-        {/*         <Stack.Screen name="register" component={Register} /> */}
+        <Stack.Screen name="register" component={Register} />
         <Stack.Screen name="newjobComponent" component={NewjobComponent} />
         <Stack.Screen name="Detalle" component={Details} />
       </Stack.Navigator>
