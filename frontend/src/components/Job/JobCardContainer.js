@@ -3,17 +3,22 @@ import React from "react";
 import JobCardList from "./JobCardList";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addJobsData } from "../../features/jobs/JobSlice";
+
 
 const JobCardContainer = () => {
     const [loading, setLoading] = useState(true);
-    const [jobs, setJobs] = useState([]);
+    const jobs = useSelector(state => state.jobs)
     const [dataOk, setDataOk] = useState(false);
+    const dispatch = useDispatch()
 
     useEffect(() => {
         axios
             .get("https://s4-07-m-reactnative.herokuapp.com/api/jobcards")
             .then((response) => {
-                setJobs(response.data);
+                dispatch(addJobsData(response.data))
+                console.log(jobs,"esto es la data 2++++")
             })
             .finally(() => {
                 
@@ -28,7 +33,7 @@ const JobCardContainer = () => {
 
 
 
-    useEffect(() => {
+   /*  useEffect(() => {
             
             jobs.forEach((job, index) => {
                 axios
@@ -36,7 +41,7 @@ const JobCardContainer = () => {
                         `https://s4-07-m-reactnative.herokuapp.com/api/users/${job.userId}`
                     )
                     .then((response) => {
-                        setJobs((jobs) => {
+                        dispatch((jobs) => {
                             const newJobs = [...jobs];
                             newJobs[index].provincia = response.data.provincia;
                             newJobs[index].contratador = response.data.nombreCompleto;
@@ -55,7 +60,7 @@ const JobCardContainer = () => {
             
         
     }, [dataOk]);
-
+ */
     if (loading) {
         return <ActivityIndicator size="large" color="purple" />;
     }
