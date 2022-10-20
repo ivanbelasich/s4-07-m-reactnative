@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 const Header = ({ isTransparent }) => {
   const userName = useSelector((state) => state.user);
+  const [name, subName] = userName[0].user.nombreCompleto.split(" ");
   return (
     <View
       className={`mt-8 py-5 px-7 ${
@@ -16,14 +17,16 @@ const Header = ({ isTransparent }) => {
           className="h-10 w-5"
         />
       </TouchableOpacity>
-      <View className="flex-row items-center ">
-        <Text className="pr-3 text-lg text-[#FCFCFC] ">
-          {userName && userName[0].user.nombreCompleto}
-        </Text>
+      <View className="flex-row items-center">
+        <View className="items-center mr-3">
+          <Text className=" text-xs text-[#FCFCFC]">{name}</Text>
+          <Text className=" text-xs text-[#FCFCFC]">{subName}</Text>
+        </View>
+
         <View className="rounded-full">
           <Image
-            source={require("../assets/avatar.png")}
-            className="h-12 w-12"
+            source={require("../assets/ProfileCard/profile-pic.png")}
+            className="h-[70px] w-[70px]"
           />
         </View>
       </View>
