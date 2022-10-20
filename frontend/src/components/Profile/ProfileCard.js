@@ -14,7 +14,7 @@ const ProfileCard = () => {
         <TouchableOpacity className="z-10">
           <Image
             source={EditIcon}
-            className="bg-[#673085] rounded-2xl fixed top-6 left-8"
+            className="bg-[#673085] rounded-2xl fixed top-7 left-8"
           />
         </TouchableOpacity>
         <Image source={ProfilePic} className="z-0" />
