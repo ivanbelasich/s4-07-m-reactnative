@@ -62,7 +62,7 @@ export default function NewjobComponent({ navigation }) {
     const datos = data;
     datos.presupuesto = Number(datos.presupuesto);
     //data.presupuesto = 1500;
-    console.log(datos);
+   
     setLoad(true);
 
     try {

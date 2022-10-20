@@ -88,7 +88,7 @@ export default function LoginContainer({ navigation }) {
         <Text className="text-center text-[16px] font-semibold">para continuar</Text>
       </View>
       <View>
-        <Text className="ml-4 font-bold">Mail</Text>
+        <Text className="ml-4 font-bold">E-mail</Text>
         <TextInput
           onChangeText={onChangeUser}
           value={user}
@@ -135,14 +135,14 @@ export default function LoginContainer({ navigation }) {
             source={require("../../assets/Login/google.png")}
             className="h-[20px] w-[20px] mr-[10px]"
           />
-          <Text className="text-center text-dark-purple font-extrabold">Google</Text>
+          <Text className="text-center text-dark-purple font-extrabold">GOOGLE</Text>
         </TouchableOpacity>
         <TouchableOpacity className="w-[150px] h-[36px] border border-dark-purple rounded-xl flex-row items-center justify-center">
           <Image
             source={require("../../assets/Login/facebook.png")}
             className="h-[20px] w-[20px] mr-[10px]"
           />
-          <Text className="text-center text-dark-purple font-extrabold">Facebook</Text>
+          <Text className="text-center text-dark-purple font-extrabold">FACEBOOK</Text>
         </TouchableOpacity>
       </View>
 
