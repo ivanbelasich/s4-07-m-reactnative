@@ -2,8 +2,10 @@ import React from "react";
 import { View, StyleSheet, Text, StatusBar, Image, Alert, Button, ActivityIndicator } from "react-native";
 import { styled } from "nativewind";
 import CustomBtn from "./buttons";
-import { useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -118,8 +120,13 @@ const Details = ({ route, navigation }) => {
   return (
     <View className="mb-4">
       {/* cambiar nombre del archivo fakeData por la API  */}
-      <View style={styles.container} className="rounded-md">
-      <Button title="Home" onPress={() => navigation.navigate("isLogged")} />
+    <View style={styles.container} className="rounded-md">
+        {/* <Button  className="bg-black" title="Home" onPress={() => navigation.navigate("isLogged")} /> */}
+        <Ionicons  name="arrow-back" size={40} color="#531CB3"  onPress={() => navigation.navigate("isLogged")}/>
+       {/* <TouchableOpacity className="border-solid border-2 border-dark-purple w-[50px] h-[50px] p-2 rounded-full flex  items-center position-absolute right-0" onPress={() => navigation.navigate("isLogged")} >
+          <Text className="text-xl text-dark-purple" >x</Text>
+        </TouchableOpacity> */}
+      
         <Header title={items.titulo} price={items.presupuesto} />
         <DatePlace
           date={items.createdAt}

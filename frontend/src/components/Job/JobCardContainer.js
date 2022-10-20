@@ -43,7 +43,7 @@ const JobCardContainer = () => {
                             newJobs[index].ciudad = response.data.ciudad;
                             return newJobs;
                         });
-                        console.log(jobs);
+                      
                     })
                     .finally(() => {
                         if(index === jobs.length - 1){
@@ -58,7 +58,9 @@ const JobCardContainer = () => {
 
     if (loading) {
         return <ActivityIndicator size="large" color="purple" />;
+        
     }
+   
     return <JobCardList jobs={jobs}  />;
 };
 

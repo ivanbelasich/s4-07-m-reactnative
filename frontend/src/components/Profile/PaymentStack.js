@@ -61,7 +61,7 @@ const PaymentBtn = ({name, id, inputTitle, placeHolder, value, dNone}) => {
                 className="w-[90%] py-2 border bg-dark-purple rounded-xl mb-20 mx-auto"
                 onPress={() => setPayment(true)}
             >
-                <Text className="text-center text-white">                    
+                <Text className="text-center text-white font-extrabold">                    
                         "INGRESAR DINERO"
                 </Text>
             </TouchableOpacity>

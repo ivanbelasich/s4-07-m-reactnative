@@ -35,10 +35,11 @@ const CustomBtn = ({
         ...styles.container,
         ...buttonStyle,
         backgroundColor: buttonColor || '#570e7e',
+        
       }}
       onPress={onPress}>
       <Text
-        style={{...styles.title, ...textStyle, color: titleColor || '#f1f1f1'}}>
+        style={{...styles.title, ...textStyle, color: titleColor, fontWeight: 'bold' || '#f1f1f1'}}>
         {title}
       </Text>
     </TouchableOpacity>
