@@ -120,7 +120,7 @@ export default function LoginContainer({ navigation }) {
         className="w-1/2 py-2 border bg-dark-purple rounded-xl mb-10"
         onPress={() => login()}
       >
-        <Text className="text-center text-white">
+        <Text className="text-center text-white font-extrabold">
           {loading ? (
             <ActivityIndicator color="pink" size="small" />
           ) : (
@@ -135,14 +135,14 @@ export default function LoginContainer({ navigation }) {
             source={require("../../assets/Login/google.png")}
             className="h-[20px] w-[20px] mr-[10px]"
           />
-          <Text className="text-center text-dark-purple">Google</Text>
+          <Text className="text-center text-dark-purple font-extrabold">Google</Text>
         </TouchableOpacity>
         <TouchableOpacity className="w-[150px] h-[36px] border border-dark-purple rounded-xl flex-row items-center justify-center">
           <Image
             source={require("../../assets/Login/facebook.png")}
             className="h-[20px] w-[20px] mr-[10px]"
           />
-          <Text className="text-center text-dark-purple">Facebook</Text>
+          <Text className="text-center text-dark-purple font-extrabold">Facebook</Text>
         </TouchableOpacity>
       </View>
 

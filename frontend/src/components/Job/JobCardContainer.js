@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const JobCardContainer = () => {
+
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [dataOk, setDataOk] = useState(false);
