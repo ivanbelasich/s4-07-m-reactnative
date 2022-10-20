@@ -9,12 +9,12 @@ import EditIcon from "../../assets/ProfileCard/edit-icon.png";
 
 const ProfileCard = () => {
   return (
-    <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#724BB6] justify-around">
+    <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#944BBB] justify-around">
       <View className="items-center ">
         <TouchableOpacity className="z-10">
           <Image
             source={EditIcon}
-            className="bg-[#673085] rounded-2xl fixed top-6 left-8"
+            className="bg-[#673085] rounded-2xl fixed top-7 left-8"
           />
         </TouchableOpacity>
         <Image source={ProfilePic} className="z-0" />

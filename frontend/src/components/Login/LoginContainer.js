@@ -12,6 +12,7 @@ import axios from "axios";
 import Toast from "react-native-root-toast";
 import { useDispatch } from "react-redux";
 import { addUserData } from "../../features/user/UserSlice";
+import VioletButton from "../Profile/VioletButton";
 
 export default function LoginContainer({ navigation }) {
   const [user, onChangeUser] = React.useState("");
@@ -79,19 +80,19 @@ export default function LoginContainer({ navigation }) {
     <View className="container mx-auto px-10 h-[100%]  flex-col items-center justify-center">
       <Image
         source={require("../../assets/Login/Logo.png")}
-        className="w-[222px] h-[82px]"
+        className="w-[222px] h-[82px] mt-[30px]"
       />
 
       <View className="my-8">
-        <Text className="text-center">Ingresa</Text>
-        <Text className="text-center">para continuar</Text>
+        <Text className="text-center text-[16px] font-semibold">Ingresar</Text>
+        <Text className="text-center text-[16px] font-semibold">para continuar</Text>
       </View>
       <View>
         <Text className="ml-4 font-bold">Mail</Text>
         <TextInput
           onChangeText={onChangeUser}
           value={user}
-          placeholder="Usuario"
+          placeholder="info@tasksaccount.com"
           className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-8"
         />
       </View>
@@ -101,16 +102,16 @@ export default function LoginContainer({ navigation }) {
           secureTextEntry={true}
           onChangeText={onChangePassword}
           value={password}
-          placeholder="Contraseña"
+          placeholder="*****"
           keyboardType="password"
-          className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-8"
+          className=" px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px] mb-[30px]"
         />
       </View>
-      <View className="flex-row items-center my-10">
+      <View className="flex-row items-center mb-[45px]">
         <Text className="w-[104px]">Olvidaste tu contraseña?</Text>
         <TouchableOpacity className="">
           <Text className="underline color-dark-purple">
-            toca aqui para recuperarla
+            Toca aqui para recuperarla
           </Text>
         </TouchableOpacity>
       </View>
@@ -157,7 +158,7 @@ export default function LoginContainer({ navigation }) {
             });
           }}
         >
-          <Text className="underline color-dark-purple">crear cuenta</Text>
+          <Text className="underline color-dark-purple">Crear cuenta</Text>
         </TouchableOpacity>
       </View>
     </View>
