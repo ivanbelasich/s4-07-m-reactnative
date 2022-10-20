@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import { IsBoolean, IsDateString, IsNotEmpty } from 'class-validator';
 
 export class CreateNotificationDto {
   @IsNotEmpty()
@@ -22,4 +22,20 @@ export class CreateNotificationDto {
     example: '634742c61f645b0765e7a2c3',
   })
   userId: string;
+
+  @IsNotEmpty()
+  @IsDateString()
+  @ApiProperty({
+    description: 'Fecha de la notificacion',
+    example: new Date('10-20-2022'),
+  })
+  fecha: string;
+
+  @IsNotEmpty()
+  @IsBoolean()
+  @ApiProperty({
+    description: 'Estado de la notificacion',
+    example: false,
+  })
+  leido: string;
 }

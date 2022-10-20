@@ -12,6 +12,12 @@ export class Notification {
 
   @Prop()
   userId: string;
+
+  @Prop()
+  fecha: Date;
+
+  @Prop({ default: false })
+  leido: boolean;
 }
 
 export const NotificationSchema = SchemaFactory.createForClass(Notification);
