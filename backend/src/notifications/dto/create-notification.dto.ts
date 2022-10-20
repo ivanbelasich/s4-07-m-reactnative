@@ -7,7 +7,7 @@ export class CreateNotificationDto {
     description: 'Nombre de la notificacion',
     example: 'Tu postulacion fue aceptada',
   })
-  nombre: string;
+  titulo: string;
 
   @IsNotEmpty()
   @ApiProperty({
