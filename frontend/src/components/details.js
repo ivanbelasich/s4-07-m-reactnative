@@ -14,7 +14,7 @@ import { styled } from "nativewind";
 import CustomBtn from "./buttons";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TouchableOpacity } from "react-native-gesture-handler";
+//import { TouchableOpacity } from "react-native-gesture-handler";
 import { Ionicons } from '@expo/vector-icons';
 import VioletButton from "./Profile/VioletButton";
 import ProfilePic from "../assets/profile-detail-image.png";

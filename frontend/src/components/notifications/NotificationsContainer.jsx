@@ -61,7 +61,7 @@ const NotificationsContainer = () => {
             notification.forEach((notification, index) => {
                 axios
                     .get(
-                        `https://s4-07-m-reactnative.herokuapp.com/api/users/${notification.userId}`
+                        `https://s4-07-m-reactnative.herokuapp.com/notifications/${notification.userId}`
                     )
                     .then((response) => {
                         setNotification((notification) => {
