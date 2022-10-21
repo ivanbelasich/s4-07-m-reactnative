@@ -25,6 +25,8 @@ import * as yup from "yup";
 import axios from "axios";
 import Toast from "react-native-root-toast";
 import { LinearGradient } from "expo-linear-gradient";
+import { Ionicons } from '@expo/vector-icons';
+
 
 export default function NewjobComponent({ navigation }) {
   const [selectedLanguage, setSelectedLanguage] = useState();
@@ -62,7 +64,7 @@ export default function NewjobComponent({ navigation }) {
     const datos = data;
     datos.presupuesto = Number(datos.presupuesto);
     //data.presupuesto = 1500;
-   
+
     setLoad(true);
 
     try {
@@ -112,6 +114,7 @@ export default function NewjobComponent({ navigation }) {
   //   setDate(currentDate);
   // };
   return (
+   
     <View>
       <View className="bg-[#724BB6] h-[120px] pt-7 justify-center">
         <Text className="text-[28px] text-center text-[#FCFCFC] font-bold">
@@ -143,10 +146,14 @@ export default function NewjobComponent({ navigation }) {
           }) => (
             <>
               <View className="px-3 mt-14 items-center rounded-xl">
-                <VioletButton
-                  onPress={() => navigation.navigate("isLogged")}
-                  title="Volver"
-                />
+
+                <View className="left-[160px] top-[-34px] mb-[-25px]">
+                  <Ionicons
+                    name="arrow-undo" size={29} color="#570E7E"
+                    onPress={() => navigation.navigate("isLogged")}
+
+                  />
+                </View>
                 <Text className="mx-8 my-1 self-start text-[16px]  font-medium">
                   Título
                 </Text>
@@ -201,7 +208,7 @@ export default function NewjobComponent({ navigation }) {
                   <Text className="">{date.toDateString()}</Text>
                   {show && (
                     <DateTimePicker
-                      
+
                       minimumDate={new Date(Date.now())}
                       locale="es-ES"
                       value={date}
@@ -310,5 +317,6 @@ export default function NewjobComponent({ navigation }) {
         </Formik>
       </ScrollView>
     </View>
+  
   );
 }

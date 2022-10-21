@@ -20,9 +20,9 @@ import { useNavigation } from "@react-navigation/native";
 const JobCard = ({ item, onPress }) => (
   <TouchableOpacity
     onPress={onPress}
-    className="bg-[#D9C6E3] my-2 mx-4 rounded-xl p-4"
+    className="bg-[#D9C6E3] my-2 mx-4 rounded-xl p-4 shadow-xl  shadow-[#570E7E]"
   >
-    <View className="flex-row justify-between">
+    <View className="flex-row justify-between ">
       <Text className="text-2xl flew-row justify-center font-medium">
         {item.titulo}
       </Text>
