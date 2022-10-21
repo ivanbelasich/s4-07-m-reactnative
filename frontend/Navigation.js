@@ -13,6 +13,7 @@ import Register from "./src/screens/Register.jsx";
 import NewjobComponent from "./src/components/NewjobComponent";
 import Details from "./src/components/details.js";
 
+
 // screens
 
 const Tab = createBottomTabNavigator();
@@ -38,11 +39,15 @@ const screenOptions = {
 
 function MyTabs() {
   return (
-    <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}>
+    <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}
+    tabBarOptions={{
+      activeBackgroundColor: "#D2A8E8" ,
+      activeTintColor:"#D2A8E8",
+    
+    }}>
       <Tab.Screen
         options={{
           title: "TU PERFIL",
-
           tabBarIcon: () => (
             <Image
               source={require("./src/assets/Navigation/profile-icon.png")}
@@ -57,7 +62,8 @@ function MyTabs() {
           title: "¿CÓMO PODEMOS AYUDARTE?",
 
           tabBarIcon: () => (
-            <Image source={require("./src/assets/Navigation/faqs-icon.png")} />
+            <Image source={require("./src/assets/Navigation/faqs-icon.png")} activeBackgroundColor= "#D2A8E8"/>
+            
           ),
         }}
         name="FAQ'S"

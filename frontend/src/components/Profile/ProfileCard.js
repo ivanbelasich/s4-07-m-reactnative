@@ -6,8 +6,13 @@ import ProfilePic from "../../assets/ProfileCard/profile-pic.png";
 import VioletButton from "./VioletButton";
 import WhiteButton from "./WhiteButton";
 import EditIcon from "../../assets/ProfileCard/edit-icon.png";
+import { useSelector } from "react-redux";
 
 const ProfileCard = () => {
+  const userName = useSelector((state) => state.user);
+  const [name, subName] = userName[0].user.nombreCompleto.split(" ");
+
+
   return (
     <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#944BBB] justify-around">
       <View className="items-center ">
@@ -20,7 +25,7 @@ const ProfileCard = () => {
         <Image source={ProfilePic} className="z-0" />
       </View>
       <Text className="text-base pb-2 text-center font-medium">
-        Lorem Ipsum
+      {name} {subName}
       </Text>
       <View className="justify-around my-3 flex-row">
         <Text className="text-base pb-2 font-medium">Edad: 25 años</Text>
