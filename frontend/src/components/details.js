@@ -112,7 +112,7 @@ const Btn = ({ contratador, trabajo }) => (
 );
 
 const Details = ({ route, navigation }) => {
-  console.log(route.params);
+  // console.log(route.params);
   const items = route.params.value;
 
   return (

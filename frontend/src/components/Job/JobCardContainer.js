@@ -4,10 +4,12 @@ import JobCardList from "./JobCardList";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const JobCardContainer = () => {
+const JobCardContainer = ({searchBy}) => {
     const [loading, setLoading] = useState(true);
     const [jobs, setJobs] = useState([]);
     const [dataOk, setDataOk] = useState(false);
+
+    // console.log(searchBy)
 
     useEffect(() => {
         axios
@@ -43,7 +45,7 @@ const JobCardContainer = () => {
                             newJobs[index].ciudad = response.data.ciudad;
                             return newJobs;
                         });
-                        console.log(jobs);
+                        // console.log(jobs);
                     })
                     .finally(() => {
                         if(index === jobs.length - 1){
@@ -59,7 +61,7 @@ const JobCardContainer = () => {
     if (loading) {
         return <ActivityIndicator size="large" color="purple" />;
     }
-    return <JobCardList jobs={jobs}  />;
+    return <JobCardList jobs={jobs} buscarPor={searchBy} />;
 };
 
 export default JobCardContainer;

@@ -80,7 +80,7 @@ export default function NewjobComponent ({ navigation }) {
     const datos = data
     datos.presupuesto = Number(datos.presupuesto)
     //data.presupuesto = 1500;
-    console.log(datos);
+    // console.log(datos);
     setLoad(true);
 
     try {
@@ -117,7 +117,7 @@ export default function NewjobComponent ({ navigation }) {
         backgroundColor: "red",
       });
       setLoad(false);
-      console.log(error);
+      // console.log(error);
     }
   };
 
