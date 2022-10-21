@@ -6,8 +6,13 @@ import ProfilePic from "../../assets/ProfileCard/profile-pic.png";
 import VioletButton from "./VioletButton";
 import WhiteButton from "./WhiteButton";
 import EditIcon from "../../assets/ProfileCard/edit-icon.png";
+import { useSelector } from "react-redux";
+
 
 const ProfileCard = () => {
+  const userData = useSelector(state => state.user)
+  const user = userData[0]?.user
+  console.log(user)
   return (
     <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#944BBB] justify-around">
       <View className="items-center ">
@@ -17,16 +22,17 @@ const ProfileCard = () => {
             className="bg-[#673085] rounded-2xl fixed top-7 left-8"
           />
         </TouchableOpacity>
+        {/* <Image source={{uri:user.photoUrl}} className="z-0 w-20 h-20 rounded-full" /> */}
         <Image source={ProfilePic} className="z-0" />
       </View>
       <Text className="text-base pb-2 text-center font-medium">
-        Lorem Ipsum
+        {user.nombreCompleto}
       </Text>
       <View className="justify-around my-3 flex-row">
         <Text className="text-base pb-2 font-medium">Edad: 25 años</Text>
         <Text className="text-base h-7 font-medium">
           <Image source={LocationIcon} />
-          <Text> Córdoba, Argentina</Text>
+          <Text> {user.department}, {user.provincia}</Text>
         </Text>
       </View>
       <View className="flex-row justify-around mt-4">

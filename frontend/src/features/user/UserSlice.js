@@ -5,10 +5,10 @@ const userSlice = createSlice({
   initialState: [],
   reducers: {
     addUserData: (state, action) => {
-      state.push(action.payload);
+      state[0] = action.payload;
     },
     deleteUserData: (state, action) => {
-      return state.filter((data) => data.id !== action.payload);
+     return state.filter((user) => user.user._id !== action.payload);
     },
   },
 });
