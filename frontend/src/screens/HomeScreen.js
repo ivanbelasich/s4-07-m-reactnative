@@ -1,15 +1,12 @@
 import { LinearGradient } from "expo-linear-gradient";
-import React, { useState } from "react";
-import { Button, ScrollView, Text, View } from "react-native";
+import React from "react";
+import { View } from "react-native";
 import Header from "../components/Header";
 import Search from "../components/Search/Search";
 import AddButton from "../components/AddButton";
 import JobCardContainer from "../components/Job/JobCardContainer";
-import ModalContainer from "../components/Modal/Modal";
-
 
 const HomeScreen = ({ navigation }) => {
-  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View>
       <LinearGradient
@@ -23,7 +20,6 @@ const HomeScreen = ({ navigation }) => {
         <Header isTransparent />
         <Search />
       </LinearGradient>
-<ModalContainer titulo={'modal'}/>
       <JobCardContainer />
       <AddButton
         texto="+"
@@ -35,7 +31,6 @@ const HomeScreen = ({ navigation }) => {
           });
         }}
       />
-
     </View>
   );
 };
