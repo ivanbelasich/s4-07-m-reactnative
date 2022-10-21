@@ -6,9 +6,15 @@ import WhiteButton from "./WhiteButton";
 // import Paypal from './paypalComponent';
 import PaymentBtn from './PaymentStack';
 
+
 import icon_Paystack2 from "../../assets/Wallet/icon_Paystack2.png";
+import { useNavigation } from "@react-navigation/native";
 
 const Wallet = () => {
+  const navigation = useNavigation();
+  const logout = () => {
+    navigation.navigate("Login");
+  }
 
   return (
     <View className="">
@@ -40,7 +46,7 @@ const Wallet = () => {
       </View>
       <View className="flex-row justify-around mb-2">
         <VioletButton title="DARSE DE BAJA" />
-        <WhiteButton title="CERRAR SESIÓN" />
+        <WhiteButton title="CERRAR SESIÓN" onPress={logout} />
       </View>
     </View>
   );

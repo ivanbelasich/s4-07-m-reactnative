@@ -11,8 +11,7 @@ import { useSelector } from "react-redux";
 const ProfileCard = () => {
   const userName = useSelector((state) => state.user);
   const [name, subName] = userName[0].user.nombreCompleto.split(" ");
-
-
+  
   return (
     <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#944BBB] justify-around">
       <View className="items-center ">
@@ -22,6 +21,7 @@ const ProfileCard = () => {
             className="bg-[#673085] rounded-2xl fixed top-7 left-8"
           />
         </TouchableOpacity>
+        {/* <Image source={{uri:user.photoUrl}} className="z-0 w-20 h-20 rounded-full" /> */}
         <Image source={ProfilePic} className="z-0" />
       </View>
       <Text className="text-base pb-2 text-center font-medium">
@@ -31,7 +31,7 @@ const ProfileCard = () => {
         <Text className="text-base pb-2 font-medium">Edad: 25 años</Text>
         <Text className="text-base h-7 font-medium">
           <Image source={LocationIcon} />
-          <Text> Córdoba, Argentina</Text>
+          <Text> {user.department}, {user.provincia}</Text>
         </Text>
       </View>
       <View className="flex-row justify-around mt-4">
