@@ -13,13 +13,13 @@ import Register from "./src/screens/Register.jsx";
 import NewjobComponent from "./src/components/NewjobComponent";
 import Details from "./src/components/details.js";
 
-
 // screens
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const screenOptions = {
+const screenOptions = () => ({
+ 
   tabBarStyle: {
     backgroundColor: "#724BB6",
     height: 80,
@@ -35,23 +35,23 @@ const screenOptions = {
     color: "#fff",
   },
   headerTitleAlign: "center",
-};
+});
 
 function MyTabs() {
   return (
-    <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}
-    tabBarOptions={{
-      activeBackgroundColor: "#D2A8E8" ,
-      activeTintColor:"#D2A8E8",
-    
-    }}>
+    <Tab.Navigator initialRouteName="Home" {...{ screenOptions }}>
       <Tab.Screen
         options={{
           title: "TU PERFIL",
-          tabBarIcon: () => (
+          tabBarIcon: ({focused}) => (
+            focused ? 
             <Image
-              source={require("./src/assets/Navigation/profile-icon.png")}
-            />
+              source={require("./src/assets/Navigation/profile-active.png")}
+        
+            /> :   <Image
+            source={require("./src/assets/Navigation/profile-icon.png")}
+       
+          />
           ),
         }}
         name="Profile"
@@ -61,9 +61,15 @@ function MyTabs() {
         options={{
           title: "¿CÓMO PODEMOS AYUDARTE?",
 
-          tabBarIcon: () => (
-            <Image source={require("./src/assets/Navigation/faqs-icon.png")} activeBackgroundColor= "#D2A8E8"/>
-            
+          tabBarIcon: ({focused}) => (
+            focused ? 
+            <Image
+              source={require("./src/assets/Navigation/faqs-active.png")}
+        
+            /> :   <Image
+            source={require("./src/assets/Navigation/faqs-icon.png")}
+       
+          />
           ),
         }}
         name="FAQ'S"
@@ -71,7 +77,10 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
-          tabBarIcon: () => (
+          tabBarIcon: ({focused}) => (
+            focused ? 
+            <Image source={require("./src/assets/Navigation/home-active.png")} />
+            :
             <Image source={require("./src/assets/Navigation/home-icon.png")} />
           ),
           headerShown: false,
@@ -82,10 +91,16 @@ function MyTabs() {
       <Tab.Screen
         options={{
           title: "NOTIFICACIONES",
-          tabBarIcon: () => (
+          tabBarIcon: ({focused}) => (
+            focused ? 
+
             <Image
-              source={require("./src/assets/Navigation/notification-icon.png")}
+              source={require("./src/assets/Navigation/notif-active.png")}
             />
+            :
+            <Image
+            source={require("./src/assets/Navigation/notification-icon.png")}
+          />
           ),
         }}
         name="Notifications"
@@ -95,10 +110,16 @@ function MyTabs() {
         options={{
           title: "MENSAJES",
 
-          tabBarIcon: () => (
+          tabBarIcon: ({focused}) => (
+            focused ? 
+
             <Image
-              source={require("./src/assets/Navigation/messages-icon.png")}
+              source={require("./src/assets/Navigation/messages-active.png")}
             />
+            :
+            <Image
+            source={require("./src/assets/Navigation/messages-icon.png")}
+          />
           ),
         }}
         name="Chat"
