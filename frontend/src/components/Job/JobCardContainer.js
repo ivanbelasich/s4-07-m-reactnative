@@ -51,7 +51,7 @@ const JobCardContainer = () => {
 
   if (loading) {
     return (
-      <View className="flex h-full m-auto justify-center">
+      <View className="flex h-full m-auto justify-center ">
         <ActivityIndicator size="large" color="purple" />
       </View>
     );

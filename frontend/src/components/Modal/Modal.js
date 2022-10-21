@@ -1,20 +1,49 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, Modal, Pressable, Alert } from "react-native";
+import React, { useState } from "react";
 import VioletButton from "../Profile/VioletButton";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Modal(props) {
+export default function ModalContainer({
+  title,
+  message,
+  showModal,
+  setShowModal,
+}) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <View className="bg-[#D2A8E8] w-[305px] m-auto p-10 shadow-2xl shadow-[#724BB6]">
-      <Text className="text-lg font-extrabold color-[#570E7E] text-center leading-[22px]">
-        {props.title}
-      </Text>
-      <Text
-        className="text-[15px] font-semibold text-center color-[#FCFCFC] mt-4 leading-[18px] mb-6
-]"
+    <View>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={showModal}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setShowModal(!showModal);
+        }}
       >
-        {props.message}
-      </Text>
-      <VioletButton title="Aceptar" />
+        <View className="bg-[#D2A8E8] w-[305px] m-auto p-10 shadow-2xl shadow-[#724BB6]">
+          <Text className="text-lg font-extrabold color-[#570E7E] text-center leading-[22px]">
+            {title}
+          </Text>
+
+          <Text className="text-[15px] font-semibold text-center color-[#FCFCFC] mt-4 leading-[18px] mb-6]">
+            {message}
+          </Text>
+          <VioletButton
+            title="Aceptar"
+            onPress={() => setShowModal(!showModal)}
+          />
+        </View>
+      </Modal>
+
+{/*     PARA ACTIVAR EL MODAL => setShowModal(true) dentro del componente a utilizar 
+  
+       EJEMPLO: 
+
+     <Pressable onPress={() => setShowModal(true)}>
+        <Text>Show Modal</Text>
+      </Pressable> */ }
     </View>
   );
 }

@@ -9,11 +9,11 @@ import EditIcon from "../../assets/ProfileCard/edit-icon.png";
 import { useSelector } from "react-redux";
 import ProfileImage from "./ProfileImage";
 
-
 const ProfileCard = () => {
-  const userData = useSelector(state => state.user)
-  const user = userData[0]?.user
-  console.log(user)
+  const userName = useSelector((state) => state.user);
+  const [name, subName] = userName[0]?.user.nombreCompleto.split(" ");
+  const user = userName[0]?.user
+  
   return (
     <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#944BBB] justify-around">
       <View className="items-center ">
@@ -27,7 +27,7 @@ const ProfileCard = () => {
         <ProfileImage imageUrl={ProfilePic}/>
       </View>
       <Text className="text-base pb-2 text-center font-medium">
-        {user.nombreCompleto}
+      {name} {subName}
       </Text>
       <View className="justify-around my-3 flex-row">
         <Text className="text-base pb-2 font-medium">Edad: 25 años</Text>
