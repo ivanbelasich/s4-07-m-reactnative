@@ -7,6 +7,7 @@ import VioletButton from "./VioletButton";
 import WhiteButton from "./WhiteButton";
 import EditIcon from "../../assets/ProfileCard/edit-icon.png";
 import { useSelector } from "react-redux";
+import ProfileImage from "./ProfileImage";
 
 const ProfileCard = () => {
   const userName = useSelector((state) => state.user);
@@ -22,8 +23,8 @@ const ProfileCard = () => {
             className="bg-[#673085] rounded-2xl fixed top-7 left-8"
           />
         </TouchableOpacity>
-        {/* <Image source={{uri:user.photoUrl}} className="z-0 w-20 h-20 rounded-full" /> */}
-        <Image source={ProfilePic} className="z-0" />
+      
+        <ProfileImage imageUrl={ProfilePic}/>
       </View>
       <Text className="text-base pb-2 text-center font-medium">
       {name} {subName}
