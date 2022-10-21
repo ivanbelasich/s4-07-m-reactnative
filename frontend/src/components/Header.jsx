@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 const Header = ({ isTransparent }) => {
   const userName = useSelector((state) => state.user);
+  const user = userName[0]?.user;
   const [name, subName] = userName[0]?.user.nombreCompleto.split(" ");
   return (
     <View
@@ -24,10 +25,15 @@ const Header = ({ isTransparent }) => {
         </View>
 
         <View className="rounded-full">
-          <Image
+          { user?.profileImage ? (
+            <Image source={{uri: user?.profileImage}} className="h-16 w-16 rounded-full" />
+            ) : (
+            <Image
             source={require("../assets/ProfileCard/profile-pic.png")}
             className="h-[70px] w-[70px]"
-          />
+            />
+          )
+          }
         </View>
       </View>
     </View>

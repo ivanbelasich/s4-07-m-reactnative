@@ -24,7 +24,7 @@ const ProfileCard = () => {
           />
         </TouchableOpacity>
       
-        <ProfileImage ImageUrl={ProfilePic}/>
+        <ProfileImage imageUrl={ProfilePic}/>
       </View>
       <Text className="text-base pb-2 text-center font-medium">
         {user.nombreCompleto}

@@ -38,7 +38,7 @@ const JobCardContainer = () => {
             newJobs[index].ciudad = response.data.ciudad;
             return newJobs;
           });
-          console.log(jobs);
+          // console.log(jobs);
         })
         .finally(() => {
           if (index === jobs.length - 1) {
