@@ -18,11 +18,11 @@ const MakePayment = ({budget, setPayment, name, id}) => {
         billingEmail="raphael@something.com"
         activityIndicatorColor="green"
         onCancel={(cancel) => {
-            console.log("Cancelado", cancel)
+            // console.log("Cancelado", cancel)
             setPayment(false);
         }}
         onSuccess={(res) => {
-            console.log("Success", res, "nombre beneficiario",name,"id beneficiario", id)
+            // console.log("Success", res, "nombre beneficiario",name,"id beneficiario", id)
             setPayment(false)
         }}
         autoStart={true}
