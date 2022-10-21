@@ -10,7 +10,8 @@ import { useSelector } from "react-redux";
 
 const ProfileCard = () => {
   const userName = useSelector((state) => state.user);
-  const [name, subName] = userName[0].user.nombreCompleto.split(" ");
+  const [name, subName] = userName[0]?.user.nombreCompleto.split(" ");
+  const user = userName[0]?.user
   
   return (
     <View className="my-8 mx-7 py-4 shadow-2xl bg-[#f6f6f6] shadow-[#944BBB] justify-around">
