@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const Header = ({ isTransparent }) => {
   const userName = useSelector((state) => state.user);
-  const [name, subName] = userName[0].user.nombreCompleto.split(" ");
+  const [name, subName] = userName[0]?.user.nombreCompleto.split(" ");
   return (
     <View
       className={`mt-8 py-5 px-7 ${
