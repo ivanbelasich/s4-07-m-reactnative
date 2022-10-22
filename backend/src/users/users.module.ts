@@ -4,6 +4,10 @@ import { UsersController } from './users.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from './schema/user.schema';
 import { JobCard, JobCardSchema } from 'src/jobcards/schema/jobcards.schema';
+import {
+  Notification,
+  NotificationSchema,
+} from 'src/notifications/schema/notifications.schema';
 
 @Module({
   imports: [
@@ -15,6 +19,10 @@ import { JobCard, JobCardSchema } from 'src/jobcards/schema/jobcards.schema';
       {
         name: JobCard.name,
         schema: JobCardSchema,
+      },
+      {
+        name: Notification.name,
+        schema: NotificationSchema,
       },
     ]),
   ],
