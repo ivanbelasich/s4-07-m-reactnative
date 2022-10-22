@@ -29,8 +29,8 @@ const screenOptions = {
   headerStyle: { height: 130, backgroundColor: "#724BB6" },
   headerTitle: { fontSize: 60 },
   headerTitleStyle: {
-    fontWeight: "600",
-    fontSize: 26,
+    fontWeight: "800",
+    fontSize: 28,
     color: "#fff",
   },
   headerTitleAlign: "center",

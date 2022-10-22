@@ -9,9 +9,8 @@ import JobCardContainer from "../components/Job/JobCardContainer";
 const HomeScreen = ({ navigation }) => {
 
   //function para filtrar las jobcards segun escriba el usuario
-  const [searchFilter, setSearchFilter ] = useState('');
-
-  
+  const [searchFilter, setSearchFilter ] = useState();
+  const [searchCategoria, setSearchCategoria] = useState();
 
   return (
     <View>
@@ -24,9 +23,9 @@ const HomeScreen = ({ navigation }) => {
         ]}
       >
         <Header isTransparent />
-        <Search search={setSearchFilter}/>
+        <Search search={setSearchFilter} categoria={setSearchCategoria}/>
       </LinearGradient>
-       <JobCardContainer searchBy={searchFilter}/>
+       <JobCardContainer searchBy={searchFilter} searchByCat={searchCategoria}/>
       <AddButton
         texto="+"
         onClick={() => {
