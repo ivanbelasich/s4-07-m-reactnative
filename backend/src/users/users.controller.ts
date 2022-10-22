@@ -45,4 +45,10 @@ export class UsersController {
   getAllUserJobcards(@Param('id') id: string) {
     return this.usersService.findJobcards(id);
   }
+
+  @Get(':id/notifications')
+  @ApiOperation({ summary: "get the user's notifications" })
+  getAllUserNotification(@Param('id') id: string) {
+    return this.usersService.findNotifications(id);
+  }
 }
