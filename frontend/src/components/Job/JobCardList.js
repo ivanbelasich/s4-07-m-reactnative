@@ -15,11 +15,11 @@ const JobCardList = ({ jobs, userData, buscarPor, buscarCat}) => {
             if(buscarPor === undefined){
                 return val
             } else if(val.titulo.toLowerCase().includes(buscarPor.toLowerCase())) {
-                return val
-            } else if(val.categoria.toLowerCase().includes(buscarCat.toLowerCase())) {
-                return val
-                // Deberia estar funcionando pero no me devuelve los resultados.
-            }
+                return val }
+            // else if(val.categoria.toLowerCase().includes(buscarCat.toLowerCase())) {
+            //     return val
+            //     // Deberia estar funcionando pero no me devuelve los resultados.
+            // }
         } );
     
 
