@@ -7,7 +7,6 @@ const SearchInput = ({search}) => {
     const [searchValue, setSearchValue ] = useState();
 
     const searchFilterValue = () => {
-        // console.log(searchValue);
         search(searchValue);
     }
 
@@ -20,7 +19,7 @@ const SearchInput = ({search}) => {
                 value={searchValue}
             />
 
-            <TouchableOpacity className="px-3" onPress={searchFilterValue}>
+            <TouchableOpacity className="px-3" onPress={() => searchFilterValue()}>
                 <FontAwesome5 name="search" size={24} color="#6E378A" />
             </TouchableOpacity>
         </View>

@@ -59,7 +59,7 @@ const Category = ({ category }) => (
 );
 
 const UserContractor = ({ avatar, userName, userLast, deadline, budget }) => (
-  <StyledView className="mb-4">
+  <StyledView className="mb-4 shadow-xl  shadow-[#570E7E]">
     <StyledView className="flex flex-row mb-3">
       <StyledText className="font-bold text-red-500">Deadline: </StyledText>
       <StyledText className="font-bold">{deadline}</StyledText>
@@ -112,11 +112,14 @@ const Details = ({ route, navigation }) => {
   const items = route.params.value;
 
   return (
-    <View className="h-full justify-center">
+    <View className="h-full justify-center shadow-xl  shadow-[#570E7E]">
       {/* cambiar nombre del archivo fakeData por la API  */}
-    <View style={styles.container} className="rounded-md">
-        <Ionicons  name="arrow-back" size={40} color="#531CB3"  onPress={() => navigation.navigate("isLogged")}/>
-        <Header title={items.titulo} price={items.presupuesto} />
+      <View style={styles.container} className="rounded-md">
+        <View className="flex-row  justify-between mb-2">
+         <Header title={items.titulo} price={items.presupuesto} />
+          <Ionicons name="arrow-undo" size={29} color="#570E7E" onPress={() => navigation.navigate("isLogged")} />
+          
+        </View>
         <DatePlace
           date={items.createdAt}
           place={`${items.ciudad}, ${items.provincia}`}

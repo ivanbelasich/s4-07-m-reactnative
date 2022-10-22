@@ -38,7 +38,7 @@ const JobCardContainer = ({searchBy, searchByCat}) => {
             newJobs[index].ciudad = response.data.ciudad;
             return newJobs;
           });
-          console.log(jobs);
+          // console.log(jobs);
         })
         .finally(() => {
           if (index === jobs.length - 1) {
@@ -51,7 +51,7 @@ const JobCardContainer = ({searchBy, searchByCat}) => {
 
   if (loading) {
     return (
-      <View className="flex h-full m-auto justify-center">
+      <View className="flex h-full m-auto justify-center ">
         <ActivityIndicator size="large" color="purple" />
       </View>
     );
