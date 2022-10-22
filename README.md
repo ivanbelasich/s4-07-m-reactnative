@@ -29,9 +29,9 @@ Miembros del Cohorte 7, Grupo 4, Fullstack, React Native de No Country.
 |Ivan Belasich                |Frontend     |[ivanbelasich](https://github.com/ivanbelasich)|[Link](https://www.linkedin.com/in/ivanbelasich/)|
 |Juan Molina                  |Frontend     |[juanMolina14](https://github.com/juanMolina14)|[Link](https://www.linkedin.com/in/juan-molina-0000/)|
 |Raphael Richardson           |Frontend     ||
-|Julian Erreguerena           |Frontend     ||
+|Julian Erreguerena           |Frontend     |[JuliErre](https://github.com/JuliErre)|[Link](https://www.linkedin.com/in/julian-erreguerena-montini-b77055206/)
 |Oriana De Caro               |Frontend     |[orianadecaro](https://github.com/orianadecaro)|[Link](https://www.linkedin.com/in/oriana-de-caro/)|
-|Ezequiel Astrada             |Backend      ||
+|Ezequiel Astrada             |Backend      |[as-ez](https://github.com/as-ez)|[Link](https://www.linkedin.com/in/as-ez)
 |Joaquin Accorsi              |Diseño UX/UI |[behance](https://www.behance.net/joaquinaccorsi)|[Link](https://www.linkedin.com/joaquinaccorsi)|
 |Diego Ignacio Silva Cordoba  |Team Leader| ||
 
