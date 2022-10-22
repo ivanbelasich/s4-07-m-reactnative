@@ -68,7 +68,7 @@ export class UsersService {
       throw new HttpException('INVALID_ID', 404);
     const user = await this.userModel.findById(id);
     if (!user) throw new HttpException('USER_NOT_FOUND', 404);
-    const notifications = await this.jobcardModel.find({ userId: id });
+    const notifications = await this.notificationModel.find({ userId: id });
     return notifications;
   }
 }
