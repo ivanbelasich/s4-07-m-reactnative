@@ -36,7 +36,7 @@ const JobCardList = ({ jobs, userData, buscarPor, buscarCat}) => {
                 data={inResult}
                 renderItem={render}
                 keyExtractor={(item) => item._id}
-                className="mb-auto"
+                className=""
             />
         </View>
     );

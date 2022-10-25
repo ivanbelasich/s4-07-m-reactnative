@@ -13,7 +13,7 @@ const HomeScreen = ({ navigation }) => {
   const [searchCategoria, setSearchCategoria] = useState();
 
   return (
-    <View>
+    <View className="h-screen">
       <LinearGradient
         colors={[
           "rgb(83, 28, 179)",
