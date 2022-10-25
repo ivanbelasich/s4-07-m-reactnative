@@ -109,7 +109,7 @@ export default function Register({ navigation }) {
 
                 <Image source={require("../assets/Login/Logo.png")} className="w-[222px] h-[82px]" />
                 <View className="my-6">
-                    <Text className="text-center font-bold w-[228px] text-[16px]">Rellena los campos y sé parte de TA$KS</Text>
+                    <Text className="text-center font-semibold w-[228px] text-[16px]">Rellena los campos y sé parte de TA$KS</Text>
                 </View>
 
 
@@ -135,7 +135,7 @@ export default function Register({ navigation }) {
                             <View className="mb-2">
                                 <Text className="ml-3 font-bold">Nombre y Apellido</Text>
                                 <TextInput
-                                    className="py-1 px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px]"
+                                    className="py-1 px-3  bg-[#DFD8E2] rounded-xl w-[307px] h-[39px]"
                                     placeholder="Juan Perez"
                                     onChangeText={handleChange('nombreCompleto')}
                                     onBlur={handleBlur('nombreCompleto')}
@@ -170,11 +170,11 @@ export default function Register({ navigation }) {
                                     <Text className="ml-3 font-bold">Género</Text>
                                     <View className="px-3  bg-[#D9D9D9] rounded-xl w-[307px] h-[39px]">
                                         <Picker
-                                            style={{ position: 'relative', top: -5 }}
+                                            style={{ position: 'relative', top: -5 ,}}
                                             selectedValue={values.genero}
                                             onBlur={handleBlur('genero')}
                                             onValueChange={(itemValue, itemIndex) => setFieldValue('genero', itemValue)}>
-                                            <Picker.Item label="Seleccione" />
+                                            <Picker.Item label="Seleccione género" style={{color: "#570E7E"}}/>
                                             <Picker.Item label="Hombre" value="Hombre" />
                                             <Picker.Item label="Mujer" value="Mujer" />
                                             <Picker.Item label="Otro" value="Otro" />
@@ -352,7 +352,7 @@ export default function Register({ navigation }) {
                             </View>
 
 
-                            <View className="mb-10">
+                            <View className="mb-[65px]">
                                 <Text className="ml-4 font-bold">Repetir contraseña</Text>
                                 {password2 !== values.password && password2 !== "" && (
                                     <Text className="my-0 ml-4 text-[#f00]">Las contraseñas deben coincidir</Text>
@@ -388,7 +388,7 @@ export default function Register({ navigation }) {
                 </Formik>
 
 
-                <View className="flex-row mb-10 justify-between w-full">
+                <View className="flex-row mb-[48px] justify-between w-full">
                     <TouchableOpacity className="w-[150px] h-[36px] border border-dark-purple rounded-xl flex-row items-center justify-center">
                         <Image source={require("../assets/Login/google.png")} className="h-[20px] w-[20px] mr-[10px]" />
                         <Text className="text-center text-dark-purple">Google</Text>
@@ -399,7 +399,7 @@ export default function Register({ navigation }) {
                     </TouchableOpacity>
                 </View>
 
-                <View className="flex-row items-center">
+                <View className="flex-row justify-around">
                     <Text className="w-[153px]">De vuelta por aquí?</Text>
                     <TouchableOpacity className="" onPress={() => {
                         navigation.navigate("Login");

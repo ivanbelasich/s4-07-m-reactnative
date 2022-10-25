@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useSelector } from "react-redux";
 
 const Header = ({ isTransparent }) => {
   const userName = useSelector((state) => state.user);
+  const user = userName[0]?.user;
+  const [name, subName] = userName[0]?.user.nombreCompleto.split(" ");
+  const navigation = useNavigation();
+
   return (
     <View
       className={`mt-8 py-5 px-7 ${
@@ -14,17 +19,25 @@ const Header = ({ isTransparent }) => {
         <Image
           source={require("../assets/LogoHome.png")}
           className="h-10 w-5"
+          onPress={() => navigation.navigate("HomeScreen")}
         />
       </TouchableOpacity>
-      <View className="flex-row items-center ">
-        <Text className="pr-3 text-lg text-[#FCFCFC] ">
-          {userName && userName[0].user.nombreCompleto}
-        </Text>
+      <View className="flex-row items-center">
+        <View className="items-center mr-3">
+          <Text className=" text-[15px] font-semibold text-[#FCFCFC]">{name}</Text>
+          <Text className=" text-[15px] font-semibold text-[#FCFCFC]">{subName}</Text>
+        </View>
+
         <View className="rounded-full">
-          <Image
-            source={require("../assets/avatar.png")}
-            className="h-12 w-12"
-          />
+          { user?.profileImage ? (
+            <Image source={{uri: user?.profileImage}} className="h-16 w-16 rounded-full" />
+            ) : (
+            <Image
+            source={require("../assets/ProfileCard/profile-pic.png")}
+            className="h-[70px] w-[70px]"
+            />
+          )
+          }
         </View>
       </View>
     </View>

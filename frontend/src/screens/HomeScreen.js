@@ -1,6 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
-import { Button, ScrollView, Text, View } from "react-native";
+import { View } from "react-native";
 import Header from "../components/Header";
 import Search from "../components/Search/Search";
 import AddButton from "../components/AddButton";
@@ -9,9 +9,8 @@ import JobCardContainer from "../components/Job/JobCardContainer";
 const HomeScreen = ({ navigation }) => {
 
   //function para filtrar las jobcards segun escriba el usuario
-  const [searchFilter, setSearchFilter ] = useState('');
-
-  
+  const [searchFilter, setSearchFilter ] = useState();
+  const [searchCategoria, setSearchCategoria] = useState();
 
   return (
     <View>
@@ -24,9 +23,9 @@ const HomeScreen = ({ navigation }) => {
         ]}
       >
         <Header isTransparent />
-        <Search search={setSearchFilter}/>
+        <Search search={setSearchFilter} categoria={setSearchCategoria}/>
       </LinearGradient>
-       <JobCardContainer searchBy={searchFilter}/>
+      <JobCardContainer searchBy={searchFilter} searchByCat={searchCategoria} />
       <AddButton
         texto="+"
         onClick={() => {
