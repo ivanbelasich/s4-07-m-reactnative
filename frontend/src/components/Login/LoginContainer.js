@@ -37,7 +37,7 @@ export default function LoginContainer({ navigation }) {
       const response = await axios.post(
         "https://s4-07-m-reactnative.herokuapp.com/api/auth/login",
         {
-          email: user,
+          email: user.toLowerCase().replace(/ /g, ""),
           password: password,
         }
       );
@@ -85,7 +85,9 @@ export default function LoginContainer({ navigation }) {
 
       <View className="my-8">
         <Text className="text-center text-[16px] font-semibold">Ingresar</Text>
-        <Text className="text-center text-[16px] font-semibold">para continuar</Text>
+        <Text className="text-center text-[16px] font-semibold">
+          para continuar
+        </Text>
       </View>
       <View>
         <Text className="ml-4 font-bold">E-mail</Text>
@@ -135,14 +137,18 @@ export default function LoginContainer({ navigation }) {
             source={require("../../assets/Login/google.png")}
             className="h-[20px] w-[20px] mr-[10px]"
           />
-          <Text className="text-center text-dark-purple font-extrabold">GOOGLE</Text>
+          <Text className="text-center text-dark-purple font-extrabold">
+            GOOGLE
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity className="w-[150px] h-[36px] border border-dark-purple rounded-xl flex-row items-center justify-center">
           <Image
             source={require("../../assets/Login/facebook.png")}
             className="h-[20px] w-[20px] mr-[10px]"
           />
-          <Text className="text-center text-dark-purple font-extrabold">FACEBOOK</Text>
+          <Text className="text-center text-dark-purple font-extrabold">
+            FACEBOOK
+          </Text>
         </TouchableOpacity>
       </View>
 
