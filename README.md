@@ -19,7 +19,7 @@ TA$KS es una aplicación mobile que permite la publicación de servicios o traba
 | React Native  |Nest        |
 | Expo          |MongoDb     |
 | Axios         |Socket io   |
-
+| Tailwind | |
 
 <a name="integrantes"></a>
 ## 3. Integrantes y roles
