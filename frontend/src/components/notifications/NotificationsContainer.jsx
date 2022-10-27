@@ -1,4 +1,4 @@
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator,Text } from "react-native";
 import React from "react";
 import NotificationsList from "./NotificationsList";
 import axios from "axios";
