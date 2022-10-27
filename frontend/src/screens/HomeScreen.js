@@ -7,9 +7,8 @@ import AddButton from "../components/AddButton";
 import JobCardContainer from "../components/Job/JobCardContainer";
 
 const HomeScreen = ({ navigation }) => {
-
   //function para filtrar las jobcards segun escriba el usuario
-  const [searchFilter, setSearchFilter ] = useState();
+  const [searchFilter, setSearchFilter] = useState();
   const [searchCategoria, setSearchCategoria] = useState();
 
   return (
@@ -23,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
         ]}
       >
         <Header isTransparent />
-        <Search search={setSearchFilter} categoria={setSearchCategoria}/>
+        <Search search={setSearchFilter} categoria={setSearchCategoria} />
       </LinearGradient>
       <JobCardContainer searchBy={searchFilter} searchByCat={searchCategoria} />
       <AddButton
