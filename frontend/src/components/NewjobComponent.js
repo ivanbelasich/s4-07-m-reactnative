@@ -186,11 +186,12 @@ export default function NewjobComponent({ navigation }) {
                   >
                     <Picker.Item label="" value="null" enabled={false} />
                     <Picker.Item
-                      label="Java"
-                      value="java"
+                      label="Pinturería"
+                      value="Pinturería"
                       className="text-[#A1A1A1]"
                     />
-                    <Picker.Item label="JavaScript" value="js" />
+                    <Picker.Item label="Albañilería" value="Albañilería" />
+                    <Picker.Item label="Tareas de hogar" value="Tareas de hogar" />
                   </Picker>
                   {errors.categoria && touched.categoria && (
                     <Text className="text-xs text-red-500 ml-4">

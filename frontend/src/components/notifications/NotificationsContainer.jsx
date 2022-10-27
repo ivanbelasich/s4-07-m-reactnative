@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 
 const NotificationsContainer = () => {
     const userData = useSelector((state) => state.user);
-    const user = userData[0]?.user;
+    // const user = userData[0]?.user;
+
+    const {_id} = userData[0]?.user;
 
     const [loading, setLoading] = useState(true);
     const [notification, setNotification] = useState([]);
@@ -15,7 +17,7 @@ const NotificationsContainer = () => {
     useEffect(() => {
         axios
             .get(
-                `https://s4-07-m-reactnative.herokuapp.com/notifications/${user._id}`
+                `https://s4-07-m-reactnative.herokuapp.com/api/users/${_id}/notifications`
             )
             .then((response) => {
                 setNotification(response.data);
