@@ -26,6 +26,7 @@ import axios from "axios";
 import Toast from "react-native-root-toast";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from '@expo/vector-icons';
+import { useSelector } from "react-redux";
 
 
 export default function NewjobComponent({ navigation }) {
@@ -34,6 +35,11 @@ export default function NewjobComponent({ navigation }) {
   const [mode, setMode] = useState("date");
   const [show, setShow] = useState(false);
   const [load, setLoad] = React.useState(false);
+
+  const userData = useSelector((state) => state.user);
+
+  const {_id} = userData[0]?.user;
+  console.log("hokaaaaaaaaa",_id);
 
   const showMode = (currentMode) => {
     if (Platform.OS === "android") {
@@ -131,7 +137,7 @@ export default function NewjobComponent({ navigation }) {
             presupuesto: "",
             fechaLimite: "",
             descripcion: "",
-            userId: "634742c61f645b0765e7a2c3",
+            userId: `${_id}`,
           }}
           onSubmit={(values) => postear(values)}
         >

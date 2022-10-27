@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList, SafeAreaView, View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
 import JobCard from "./JobCard";
 import { useNavigation } from "@react-navigation/native";
@@ -30,15 +30,23 @@ const JobCardList = ({ jobs, userData, buscarPor, buscarCat}) => {
         />
     );
 
+    const listFooter = () => {
+        return <Text className="text-center text-xl text-black mb-80">...</Text>;
+    };
+
     return (
-        <View>
+        <SafeAreaView>
+
+        <View className="flex flex-col items-center justify-center  ">
             <FlatList
                 data={inResult}
                 renderItem={render}
                 keyExtractor={(item) => item._id}
-                className=""
-            />
+                className="flex"
+                ListFooterComponent={listFooter}
+                />
         </View>
+                </SafeAreaView>
     );
 };
 
