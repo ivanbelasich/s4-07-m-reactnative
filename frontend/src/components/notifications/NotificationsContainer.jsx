@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator } from "react-native";
+import { ActivityIndicator } from "react-native";
 import React from "react";
 import NotificationsList from "./NotificationsList";
 import axios from "axios";
@@ -40,6 +40,7 @@ const NotificationsContainer = () => {
         );
     }
     return <NotificationsList data={notification} />;
+  
 };
 
 export default NotificationsContainer;

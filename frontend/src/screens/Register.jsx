@@ -63,7 +63,7 @@ export default function Register({ navigation }) {
     });
 
     const register = async (data) => {
-        console.log(data);
+        // console.log(data);
         setLoad(true);
 
         try {
@@ -99,7 +99,7 @@ export default function Register({ navigation }) {
                 backgroundColor: "red",
             });
             setLoad(false);
-            console.log(error);
+            // console.log(error);
         }
     };
 

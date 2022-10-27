@@ -72,7 +72,7 @@ export default function LoginContainer({ navigation }) {
         backgroundColor: "red",
       });
       setLoading(false);
-      console.log(error);
+      // console.log(error);
     }
   };
 

@@ -105,7 +105,7 @@ export default function NewjobComponent({ navigation }) {
         }
       );
       setLoad(false);
-      console.log(error);
+      // console.log(error);
     }
   };
 

@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const AddButton = (props) => {
   return (
-    <View className="shadow-2xl  shadow-[#673085] w-[80px] absolute bottom-0 right-0 mr-6 mb-6 rounded-[150px]">
+    <View className="shadow-2xl shadow-[#673085] w-[80px] h-[80px] absolute bottom-16 right-4 rounded-[150px]">
       <LinearGradient
         colors={["#673085", "#AA7BC3"]}
         className="rounded-[150px] "

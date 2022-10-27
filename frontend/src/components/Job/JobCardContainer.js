@@ -4,7 +4,7 @@ import JobCardList from "./JobCardList";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const JobCardContainer = () => {
+const JobCardContainer = ({searchBy, searchByCat}) => {
 
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
@@ -51,12 +51,12 @@ const JobCardContainer = () => {
 
   if (loading) {
     return (
-      <View className="flex h-full m-auto justify-center ">
+      <View className="flex justify-center ">
         <ActivityIndicator size="large" color="purple" />
       </View>
     );
   }
-  return <JobCardList jobs={jobs} />;
+  return <JobCardList jobs={jobs} buscarPor={searchBy} buscarCat={searchByCat}/>;
 };
 
 export default JobCardContainer;
