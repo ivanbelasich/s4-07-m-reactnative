@@ -5,20 +5,12 @@ import {
   Text,
   StatusBar,
   Image,
-  Alert,
-  Button,
-  ActivityIndicator,
   TouchableOpacity,
 } from "react-native";
 import { styled } from "nativewind";
-import CustomBtn from "./buttons";
-import { useEffect, useState } from "react";
-import axios from "axios";
-//import { TouchableOpacity } from "react-native-gesture-handler";
-import { Ionicons } from '@expo/vector-icons';
-import VioletButton from "./Profile/VioletButton";
-import ProfilePic from "../assets/profile-detail-image.png";
-
+import { Ionicons } from "@expo/vector-icons";
+import ProfilePic from "../../assets/profile-detail-image.png";
+import ApplyJobButton from "./ApplyJobButton";
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
@@ -34,10 +26,10 @@ const Header = ({ title, price }) => (
 const DatePlace = ({ date, place, category }) => (
   <StyledView className="flex flex-row justify-between">
     <StyledText style={styles.text}>
-      <Image source={require("../assets/Vector.png")} /> {date.slice(0, 10)}
+      <Image source={require("../../assets/Vector.png")} /> {date.slice(0, 10)}
     </StyledText>
     <StyledText style={styles.text}>
-      <Image source={require("../assets/LocationIcon.png")} /> {place}
+      <Image source={require("../../assets/LocationIcon.png")} /> {place}
     </StyledText>
     {/* lo movi para mejor visualizacion */}
     <StyledText className="text-slate-800 rounded-full bg-violet-50 w-auto px-2 text-center">
@@ -96,16 +88,7 @@ const UserContractor = ({ avatar, userName, userLast, deadline, budget }) => (
   </StyledView>
 );
 
-const Btn = ({ contratador, trabajo }) => (
-  <StyledView className="flex-row mb-2 justify-between">
-    <TouchableOpacity className="shadow-xl  shadow-[#570E7E] rounded-xl">
-      <Text className="border-2 h-10 p-3 font-extrabold text-xs border-[#5D1683] rounded-xl bg-[#D9C6E3] color-[#531CB3] text-center w-[135px]">
-        CONTACTAR
-      </Text>
-    </TouchableOpacity>
-    <VioletButton title="APLICAR" />
-  </StyledView>
-);
+<ApplyJobButton /* titulo={items.title} descripcion={items.descripcion} */ />;
 
 const Details = ({ route, navigation }) => {
   // console.log(route.params);
@@ -116,9 +99,13 @@ const Details = ({ route, navigation }) => {
       {/* cambiar nombre del archivo fakeData por la API  */}
       <View style={styles.container} className="rounded-md">
         <View className="flex-row  justify-between mb-2">
-         <Header title={items.titulo} price={items.presupuesto} />
-          <Ionicons name="arrow-undo" size={29} color="#570E7E" onPress={() => navigation.navigate("isLogged")} />
-          
+          <Header title={items.titulo} price={items.presupuesto} />
+          <Ionicons
+            name="arrow-undo"
+            size={29}
+            color="#570E7E"
+            onPress={() => navigation.navigate("isLogged")}
+          />
         </View>
         <DatePlace
           date={items.createdAt}
@@ -134,7 +121,7 @@ const Details = ({ route, navigation }) => {
           deadline={items.fechaLimite?.slice(0, 10)}
           budget={items.presupuesto}
         />
-        <Btn contratador={items.contratador} trabajo={items.titulo} />
+        <ApplyJobButton descripcion={items.descripcion} titulo={items.titulo} idCreador={items.userId} />
         {/* <Category category={item.category} /> */}
       </View>
     </View>

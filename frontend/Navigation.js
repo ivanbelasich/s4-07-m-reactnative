@@ -11,7 +11,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./src/screens/Login.jsx";
 import Register from "./src/screens/Register.jsx";
 import NewjobComponent from "./src/components/NewjobComponent";
-import Details from "./src/components/details.js";
+import Details from "./src/components/Details/details";
 
 // screens
 
@@ -19,7 +19,6 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const screenOptions = () => ({
- 
   tabBarStyle: {
     backgroundColor: "#724BB6",
     height: 80,
@@ -43,16 +42,16 @@ function MyTabs() {
       <Tab.Screen
         options={{
           title: "TU PERFIL",
-          tabBarIcon: ({focused}) => (
-            focused ? 
-            <Image
-              source={require("./src/assets/Navigation/profile-active.png")}
-        
-            /> :   <Image
-            source={require("./src/assets/Navigation/profile-icon.png")}
-       
-          />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image
+                source={require("./src/assets/Navigation/profile-active.png")}
+              />
+            ) : (
+              <Image
+                source={require("./src/assets/Navigation/profile-icon.png")}
+              />
+            ),
         }}
         name="Profile"
         component={Profile}
@@ -61,28 +60,32 @@ function MyTabs() {
         options={{
           title: "¿CÓMO PODEMOS AYUDARTE?",
 
-          tabBarIcon: ({focused}) => (
-            focused ? 
-            <Image
-              source={require("./src/assets/Navigation/faqs-active.png")}
-        
-            /> :   <Image
-            source={require("./src/assets/Navigation/faqs-icon.png")}
-       
-          />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image
+                source={require("./src/assets/Navigation/faqs-active.png")}
+              />
+            ) : (
+              <Image
+                source={require("./src/assets/Navigation/faqs-icon.png")}
+              />
+            ),
         }}
         name="FAQ'S"
         component={Faq}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({focused}) => (
-            focused ? 
-            <Image source={require("./src/assets/Navigation/home-active.png")} />
-            :
-            <Image source={require("./src/assets/Navigation/home-icon.png")} />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image
+                source={require("./src/assets/Navigation/home-active.png")}
+              />
+            ) : (
+              <Image
+                source={require("./src/assets/Navigation/home-icon.png")}
+              />
+            ),
           headerShown: false,
         }}
         name="Home"
@@ -91,17 +94,16 @@ function MyTabs() {
       <Tab.Screen
         options={{
           title: "NOTIFICACIONES",
-          tabBarIcon: ({focused}) => (
-            focused ? 
-
-            <Image
-              source={require("./src/assets/Navigation/notif-active.png")}
-            />
-            :
-            <Image
-            source={require("./src/assets/Navigation/notification-icon.png")}
-          />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image
+                source={require("./src/assets/Navigation/notif-active.png")}
+              />
+            ) : (
+              <Image
+                source={require("./src/assets/Navigation/notification-icon.png")}
+              />
+            ),
         }}
         name="Notifications"
         component={Notifications}
@@ -110,17 +112,16 @@ function MyTabs() {
         options={{
           title: "MENSAJES",
 
-          tabBarIcon: ({focused}) => (
-            focused ? 
-
-            <Image
-              source={require("./src/assets/Navigation/messages-active.png")}
-            />
-            :
-            <Image
-            source={require("./src/assets/Navigation/messages-icon.png")}
-          />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image
+                source={require("./src/assets/Navigation/messages-active.png")}
+              />
+            ) : (
+              <Image
+                source={require("./src/assets/Navigation/messages-icon.png")}
+              />
+            ),
         }}
         name="Chat"
         component={Chat}

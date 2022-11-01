@@ -39,7 +39,6 @@ export default function NewjobComponent({ navigation }) {
   const userData = useSelector((state) => state.user);
 
   const {_id} = userData[0]?.user;
-  console.log("hokaaaaaaaaa",_id);
 
   const showMode = (currentMode) => {
     if (Platform.OS === "android") {
