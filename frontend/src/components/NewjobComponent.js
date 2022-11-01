@@ -25,9 +25,8 @@ import * as yup from "yup";
 import axios from "axios";
 import Toast from "react-native-root-toast";
 import { LinearGradient } from "expo-linear-gradient";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
-
 
 export default function NewjobComponent({ navigation }) {
   const [selectedLanguage, setSelectedLanguage] = useState();
@@ -38,7 +37,7 @@ export default function NewjobComponent({ navigation }) {
 
   const userData = useSelector((state) => state.user);
 
-  const {_id} = userData[0]?.user;
+  const { _id } = userData[0]?.user;
 
   const showMode = (currentMode) => {
     if (Platform.OS === "android") {
@@ -68,8 +67,6 @@ export default function NewjobComponent({ navigation }) {
   const postear = async (data) => {
     const datos = data;
     datos.presupuesto = Number(datos.presupuesto);
-    //data.presupuesto = 1500;
-
     setLoad(true);
 
     try {
@@ -77,7 +74,6 @@ export default function NewjobComponent({ navigation }) {
         "https://s4-07-m-reactnative.herokuapp.com/api/jobcards",
         datos
       );
-
       let toast = Toast.show("Post exitoso!", {
         duration: Toast.durations.LONG,
         position: Toast.positions.CENTER,
@@ -110,16 +106,11 @@ export default function NewjobComponent({ navigation }) {
         }
       );
       setLoad(false);
-      // console.log(error);
+      console.log(error);
     }
   };
 
-  // const onChange = (event, selectedDate) => {
-  //   const currentDate = selectedDate;
-  //   setDate(currentDate);
-  // };
   return (
-   
     <View>
       <View className="bg-[#724BB6] h-[120px] pt-7 justify-center">
         <Text className="text-[28px] text-center text-[#FCFCFC] font-bold">
@@ -151,12 +142,12 @@ export default function NewjobComponent({ navigation }) {
           }) => (
             <>
               <View className="px-3 mt-14 items-center rounded-xl">
-
                 <View className="left-[160px] top-[-34px] mb-[-25px]">
                   <Ionicons
-                    name="arrow-undo" size={29} color="#570E7E"
+                    name="arrow-undo"
+                    size={29}
+                    color="#570E7E"
                     onPress={() => navigation.navigate("isLogged")}
-
                   />
                 </View>
                 <Text className="mx-8 my-1 self-start text-[16px]  font-medium">
@@ -196,7 +187,10 @@ export default function NewjobComponent({ navigation }) {
                       className="text-[#A1A1A1]"
                     />
                     <Picker.Item label="Albañilería" value="Albañilería" />
-                    <Picker.Item label="Tareas de hogar" value="Tareas de hogar" />
+                    <Picker.Item
+                      label="Tareas de hogar"
+                      value="Tareas de hogar"
+                    />
                   </Picker>
                   {errors.categoria && touched.categoria && (
                     <Text className="text-xs text-red-500 ml-4">
@@ -214,7 +208,6 @@ export default function NewjobComponent({ navigation }) {
                   <Text className="">{date.toDateString()}</Text>
                   {show && (
                     <DateTimePicker
-
                       minimumDate={new Date(Date.now())}
                       locale="es-ES"
                       value={date}
@@ -323,6 +316,5 @@ export default function NewjobComponent({ navigation }) {
         </Formik>
       </ScrollView>
     </View>
-  
   );
 }

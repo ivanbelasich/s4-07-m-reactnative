@@ -29,7 +29,6 @@ const NotificationsContainer = () => {
         console.log(error);
       });
   }, []);
-  console.log(userData);
 
   if (loading) {
     return <ActivityIndicator size="large" color="purple" />;

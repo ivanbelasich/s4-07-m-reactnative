@@ -8,8 +8,6 @@ const JobCardList = ({ jobs, userData, buscarPor, buscarCat }) => {
 
   // Filtrando los trabajos por Titulo
 
-  console.log("jobCardList", buscarCat);
-
   const inResult = jobs.filter((val) => {
     if (buscarPor === undefined) {
       return val;
