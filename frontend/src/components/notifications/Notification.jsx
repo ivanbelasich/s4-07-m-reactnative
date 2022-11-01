@@ -21,12 +21,11 @@ export default function Notification({ item }) {
           </View>
           <View>
             <Text className="text-lg text-dark-purple font-extrabold">
-              ¡{item.descripcion}!
+              ¡{item.titulo}!
             </Text>
             <Text className="text-base ">
-              Tu postulación para {item.titulo} fue
-            </Text>
-            <Text className="text-base">aceptada.</Text>
+              {item.descripcion}
+         </Text>
           </View>
         </View>
       </View>
