@@ -61,7 +61,7 @@ const ApplyJobButton = ({ titulo, username, idCreador }) => {
 
   return (
     <View>
-      <VioletButton onPress={applyJob} title="Aplicar" />
+      <VioletButton onPress={applyJob} title="APLICAR" />
     </View>
   );
 };

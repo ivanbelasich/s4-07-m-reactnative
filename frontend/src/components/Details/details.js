@@ -11,6 +11,7 @@ import { styled } from "nativewind";
 import { Ionicons } from "@expo/vector-icons";
 import ProfilePic from "../../assets/profile-detail-image.png";
 import ApplyJobButton from "./ApplyJobButton";
+import WhiteButton from "../Profile/WhiteButton";
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
@@ -88,8 +89,6 @@ const UserContractor = ({ avatar, userName, userLast, deadline, budget }) => (
   </StyledView>
 );
 
-<ApplyJobButton /* titulo={items.title} descripcion={items.descripcion} */ />;
-
 const Details = ({ route, navigation }) => {
   // console.log(route.params);
   const items = route.params.value;
@@ -100,12 +99,9 @@ const Details = ({ route, navigation }) => {
       <View style={styles.container} className="rounded-md">
         <View className="flex-row  justify-between mb-2">
           <Header title={items.titulo} price={items.presupuesto} />
-          <Ionicons
-            name="arrow-undo"
-            size={29}
-            color="#570E7E"
-            onPress={() => navigation.navigate("isLogged")}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate("isLogged")}>
+            <Ionicons name="arrow-undo" size={29} color="#570E7E" />
+          </TouchableOpacity>
         </View>
         <DatePlace
           date={items.createdAt}
@@ -121,7 +117,14 @@ const Details = ({ route, navigation }) => {
           deadline={items.fechaLimite?.slice(0, 10)}
           budget={items.presupuesto}
         />
-        <ApplyJobButton descripcion={items.descripcion} titulo={items.titulo} idCreador={items.userId} />
+        <View className="flex-row justify-around">
+          <WhiteButton title="GUARDAR" />
+          <ApplyJobButton
+            descripcion={items.descripcion}
+            titulo={items.titulo}
+            idCreador={items.userId}
+          />
+        </View>
         {/* <Category category={item.category} /> */}
       </View>
     </View>

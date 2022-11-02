@@ -8,7 +8,7 @@ export default function VioletButton(props) {
       <LinearGradient
         colors={["#570E7E", "#AA7BC3"]}
         style={styles.contentContainer}
-        className="h-10 rounded-xl items-center justify-center shadow-xl w-[135px] shadow-[#570E7E]"
+        className="h-10 rounded-xl items-center justify-center w-[135px] shadow-[#570e7eeb]"
       >
         <Image source={props.imagen} />
         <Text className="font-extrabold text-xs color-[#F1F1F1]">

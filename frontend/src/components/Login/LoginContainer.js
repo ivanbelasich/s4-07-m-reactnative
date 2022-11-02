@@ -118,7 +118,7 @@ export default function LoginContainer({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity
+      {/*   <TouchableOpacity
         className="w-1/2 py-2 border bg-dark-purple rounded-xl mb-10"
         onPress={() => login()}
       >
@@ -129,7 +129,19 @@ export default function LoginContainer({ navigation }) {
             "INGRESAR"
           )}{" "}
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <View className="mb-16">
+        <VioletButton
+          title={
+            loading ? (
+              <ActivityIndicator color="pink" size="small" />
+            ) : (
+              "INGRESAR"
+            )
+          }
+          onPress={() => login()}
+        />
+      </View>
 
       <View className="flex-row mb-10 justify-between w-full">
         <TouchableOpacity className="w-[150px] h-[36px] border border-dark-purple rounded-xl flex-row items-center justify-center">
