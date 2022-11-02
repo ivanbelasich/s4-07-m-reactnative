@@ -1,7 +1,6 @@
-import { View, Text, Modal, Pressable, Alert } from "react-native";
-import React, { useState } from "react";
+import { View, Text, Modal, Alert } from "react-native";
+import React from "react";
 import VioletButton from "../Profile/VioletButton";
-import { useNavigation } from "@react-navigation/native";
 
 export default function ModalContainer({
   title,
@@ -9,8 +8,6 @@ export default function ModalContainer({
   showModal,
   setShowModal,
 }) {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <View>
       <Modal
@@ -37,13 +34,13 @@ export default function ModalContainer({
         </View>
       </Modal>
 
-{/*     PARA ACTIVAR EL MODAL => setShowModal(true) dentro del componente a utilizar 
+      {/*     PARA ACTIVAR EL MODAL => setShowModal(true) dentro del componente a utilizar 
   
        EJEMPLO: 
 
      <Pressable onPress={() => setShowModal(true)}>
         <Text>Show Modal</Text>
-      </Pressable> */ }
+      </Pressable> */}
     </View>
   );
 }
