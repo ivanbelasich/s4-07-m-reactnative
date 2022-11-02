@@ -1,4 +1,4 @@
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Modal, Alert } from "react-native";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -34,7 +34,7 @@ const ApplyJobButton = ({ titulo, username, idCreador }) => {
           leido: false,
         }
       );
-      let toast = Toast.show("Has aplicado correctamente para el trabajo!", {
+      Toast.show("Has aplicado correctamente para el trabajo!", {
         duration: Toast.durations.LONG,
         position: Toast.positions.BOTTOM,
         shadow: true,
@@ -59,19 +59,9 @@ const ApplyJobButton = ({ titulo, username, idCreador }) => {
     }
   };
 
-  /* const Btn = ({ contratador, trabajo }) => (
-    /*   <StyledView className="flex-row mb-2 justify-between">
-      <TouchableOpacity className="shadow-xl  shadow-[#570E7E] rounded-xl">
-        <Text className="border-2 h-10 p-3 font-extrabold text-xs border-[#5D1683] rounded-xl bg-[#D9C6E3] color-[#531CB3] text-center w-[135px]">
-          CONTACTAR
-        </Text>
-      </TouchableOpacity>
-      <VioletButton title="APLICAR" onPress={() => applyJob} />
-    </StyledView> */
-
   return (
     <View>
-    <VioletButton onPress={applyJob} title="Aplicar"/>
+      <VioletButton onPress={applyJob} title="APLICAR" />
     </View>
   );
 };

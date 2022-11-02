@@ -4,7 +4,6 @@ import Notification from "./Notification";
 import { useNavigation } from "@react-navigation/native";
 
 const NotificationsList = ({ data, userData }) => {
-  console.log({ data } + "notificaciones");
   const navigation = useNavigation();
 
   const render = ({ item }) => (
