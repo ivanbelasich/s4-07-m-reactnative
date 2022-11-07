@@ -43,7 +43,8 @@ Para probar la aplicación:
 - [Android Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent)
 - [Apple App Store](https://apps.apple.com/es/app/expo-go/id982107779)
 2. Usando el escaner de la aplicación, debe escanear el siguiente código QR.
-![tasks-qr](https://user-images.githubusercontent.com/70997096/197891055-90f7130a-a79c-4dba-a94a-c5ade6edefe5.png)
+![expo-go](https://user-images.githubusercontent.com/70997096/200202970-e3cfe029-546c-4cbd-b632-92ba4c1178b9.svg)
+
 
 Para probar la API:
 La API y su documentación están disponibles a través de su link en Heroku: 
