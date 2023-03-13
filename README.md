@@ -39,6 +39,7 @@ Miembros del Cohorte 7, Grupo 4, Fullstack, React Native de No Country.
 <a name="deploy-es"></a>
 ## 4. Deploy
 Para probar la aplicación:
+(Puedes ver su prototipado en Figma: [Link a Figma](https://www.figma.com/proto/dQkJa57xIvLVL5aEk73DSy/TA%24KS?node-id=304%3A1458&viewport=489%2C-1488%2C0.13&scaling=scale-down&starting-point-node-id=295%3A953&show-proto-sidebar=1))
 1. Debe descargar desde su celular la aplicación Expo. 
 - [Android Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent)
 - [Apple App Store](https://apps.apple.com/es/app/expo-go/id982107779)
